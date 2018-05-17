@@ -2,25 +2,20 @@ package logic;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
-import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
 public class StartMenu extends Application{
 	Label title;
-	Button play, scores, settings, help;
+	Button play;
+	Button scores;
+	Button settings;
+	Button help;
 	
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		launch(args);
 	}
@@ -29,7 +24,6 @@ public class StartMenu extends Application{
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
-		VBox root = new VBox();
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
