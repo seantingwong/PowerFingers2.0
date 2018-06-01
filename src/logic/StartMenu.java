@@ -62,7 +62,6 @@ public class StartMenu extends Application{
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
 
-		//root.getChildren().addAll(title, play, scores, help);
 		Scene scene = new Scene(grid, 700, 400);
 		stage.setScene(scene);
 		stage.show();
