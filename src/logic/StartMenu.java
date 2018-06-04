@@ -1,28 +1,27 @@
 package logic;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
 public class StartMenu extends Application{
-	Label title;
+	Text title;
 	Button play;
 	Button scores;
 	Button settings;
 	Button help;
-	
-	public static void main(String[] args)
-	{
-		launch(args);
-	}
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -31,6 +30,7 @@ public class StartMenu extends Application{
 		VBox root = new VBox();
 		root.setSpacing(10);
 		root.setPadding(new Insets(0, 20, 10, 20)); 
+        grid.setStyle("-fx-background-color: transparent;");
 		
 		grid.setAlignment(Pos.CENTER);
 		grid.setHgap(5);
@@ -38,13 +38,42 @@ public class StartMenu extends Application{
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
-		title = new Label("Power Fingers");
+		title = new Text("Power Fingers");
+	    title.setStyle("-fx-font: 36 arial;");
+	    
 		play = new Button("Play");
+		play.setStyle("-fx-background-color: LightGrey;");
+		play.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				play.setText("clicked");
+			}
+		});
+		
 		scores = new Button("Scores");
+		scores.setStyle("-fx-background-color: LightGrey;");
+		scores.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				scores.setText("clicked");
+			}
+		});
+		
 		settings = new Button("Settings");
+		settings.setStyle("-fx-background-color: LightGrey;");
+		settings.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				settings.setText("clicked");
+			}
+		});
+		
 		help = new Button("Help");
+		help.setStyle("-fx-background-color: LightGrey;");
+		help.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				help.setText("clicked");
+			}
+		});
 
-		title.setMaxWidth(100);
+		title.maxWidth(100);
 		play.setMaxWidth(100);
 		scores.setMaxWidth(100);
 		settings.setMaxWidth(100);
@@ -56,14 +85,19 @@ public class StartMenu extends Application{
 		GridPane.setHalignment(settings, HPos.CENTER);
 		GridPane.setHalignment(help, HPos.CENTER);
 
-		grid.add(title, 0, 0, 4, 1);
+		grid.add(title, 0, 0);
 		grid.add(play, 0, 1);
 		grid.add(scores, 0, 2);
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
 
-		Scene scene = new Scene(grid, 700, 400);
+		Scene scene = new Scene(grid, 700, 400, Color.DIMGRAY);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	public static void main(String[] args)
+	{
+		launch(args);
 	}
 }
