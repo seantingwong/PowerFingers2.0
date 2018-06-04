@@ -71,7 +71,11 @@ public class StartMenu extends Application{
 		
 		help = new Button("Help");
 		help.setStyle("-fx-background-color: LightGrey;");
-		help.setOnAction(e->stage.setScene(helpMenu));
+		help.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				stage.setScene(helpMenu);
+			}
+		});
 		HelpMenu newHelp = new HelpMenu();
 		helpMenu = new Scene(newHelp.showHelp(), 700, 400, Color.DIMGRAY);
 
