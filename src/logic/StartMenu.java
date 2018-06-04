@@ -29,6 +29,7 @@ public class StartMenu extends Application{
 	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
+		Scene scene = new Scene(grid, 700, 400, Color.DIMGRAY);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
@@ -72,7 +73,7 @@ public class StartMenu extends Application{
 			}
 		});
 		HelpMenu newHelp = new HelpMenu();
-		helpMenu = new Scene(newHelp.showHelp(), 700, 400, Color.DIMGRAY);
+		helpMenu = new Scene(newHelp.showHelp(stage, scene), 700, 400, Color.DIMGRAY);
 
 		title.maxWidth(100);
 		play.setMaxWidth(100);
@@ -92,7 +93,6 @@ public class StartMenu extends Application{
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
 
-		Scene scene = new Scene(grid, 700, 400, Color.DIMGRAY);
 		stage.setScene(scene);
 		stage.show();
 	}
