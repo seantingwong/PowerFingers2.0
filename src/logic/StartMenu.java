@@ -16,12 +16,16 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
+import logic.HelpMenu;
+
+@SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	Text title;
 	Button play;
 	Button scores;
 	Button settings;
 	Button help;
+	Scene helpMenu;
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -67,11 +71,9 @@ public class StartMenu extends Application{
 		
 		help = new Button("Help");
 		help.setStyle("-fx-background-color: LightGrey;");
-		help.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				help.setText("clicked");
-			}
-		});
+		help.setOnAction(e->stage.setScene(helpMenu));
+		HelpMenu newHelp = new HelpMenu();
+		helpMenu = new Scene(newHelp.showHelp(), 700, 400, Color.DIMGRAY);
 
 		title.maxWidth(100);
 		play.setMaxWidth(100);
