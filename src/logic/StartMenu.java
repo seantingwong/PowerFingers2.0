@@ -2,13 +2,11 @@ package logic;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
@@ -28,14 +26,11 @@ public class StartMenu extends Application{
 	Scene helpMenu;
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
-		VBox root = new VBox();
-		root.setSpacing(10);
-		root.setPadding(new Insets(0, 20, 10, 20)); 
-        grid.setStyle("-fx-background-color: transparent;");
 		
+        grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
 		grid.setHgap(5);
 		grid.setVgap(5);
