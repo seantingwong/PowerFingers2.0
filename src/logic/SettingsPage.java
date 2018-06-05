@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -15,10 +16,9 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
-	// macros
-	String buttonColor = "-fx-background-color: LightGrey;";
+	public Scene scene;
 	
-	public GridPane showPage(final Stage main, final Scene goBack){
+	public SettingsPage(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -36,7 +36,7 @@ public class SettingsPage {
 	    theme.setStyle("-fx-font: 24 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(buttonColor);
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -44,7 +44,7 @@ public class SettingsPage {
 		});
 		
 		Button blueButton = new Button("Blue");
-		blueButton.setStyle(buttonColor);
+		blueButton.setStyle(StartMenu.buttonColor);
 		blueButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Change theme to blue");
@@ -52,7 +52,7 @@ public class SettingsPage {
 		});
 		
 		Button redButton = new Button("Red");
-		redButton.setStyle(buttonColor);
+		redButton.setStyle(StartMenu.buttonColor);
 		redButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Change theme to red");
@@ -60,7 +60,7 @@ public class SettingsPage {
 		});
 		
 		Button greenButton = new Button("Green");
-		greenButton.setStyle(buttonColor);
+		greenButton.setStyle(StartMenu.buttonColor);
 		greenButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Change theme to green");
@@ -83,7 +83,7 @@ public class SettingsPage {
 		GridPane.setHalignment(redButton, HPos.CENTER);
 		GridPane.setHalignment(greenButton, HPos.CENTER);
 		
-		return grid;
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
 	
 	

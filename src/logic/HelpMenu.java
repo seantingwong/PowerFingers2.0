@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,7 +15,9 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class HelpMenu {
-	public GridPane showHelp(final Stage main, final Scene goBack){
+	public Scene scene;
+	
+	public HelpMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -39,6 +42,7 @@ public class HelpMenu {
 		grid.add(back, 0, 0);
 		grid.add(title, 18, 0);
 		grid.add(guide, 0, 3);
-		return grid;
+		
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
 }

@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -15,14 +16,13 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayGame {
-	// macros
-	String buttonColor = "-fx-background-color: LightGrey;";
+	public Scene scene;
 	
 	Scene log;
 	Scene newAcc;
 	Scene guestAcc;
 	
-	public GridPane showPage(final Stage main, final Scene goBack){
+	public PlayGame(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -36,7 +36,7 @@ public class PlayGame {
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(buttonColor);
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -44,25 +44,13 @@ public class PlayGame {
 		});
 		
 		Button logIn = new Button("Log In");
-		logIn.setStyle(buttonColor);
-		logIn.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				//main.setScene(log);
-				LoginPage loginPage = new LoginPage(main, StartMenu.playGame);
-				main.setScene(loginPage.scene);
-			}
-		});
+		logIn.setStyle(StartMenu.buttonColor);
 		
 		Button account = new Button("Create Account");
-		account.setStyle(buttonColor);
-		account.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				CreateAccount createAccount = new CreateAccount(main, StartMenu.playGame);
-				main.setScene(createAccount.scene);			}
-		});
+		account.setStyle(StartMenu.buttonColor);
 		
 		Button guest = new Button("Play As Guest");
-		guest.setStyle(buttonColor);
+		guest.setStyle(StartMenu.buttonColor);
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				//main.setScene(guestAcc);
@@ -70,6 +58,12 @@ public class PlayGame {
 				main.setScene(playingGame.scene);
 			}
 		});
+		
+		CreateAccount newCreate = new CreateAccount(main, scene);
+		newAcc = newCreate.scene;
+		
+		LoginPage newLog = new LoginPage(main, scene);
+		log = newLog.scene;
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 4, 0);
@@ -85,6 +79,20 @@ public class PlayGame {
 		GridPane.setHalignment(account, HPos.CENTER);
 		GridPane.setHalignment(guest, HPos.CENTER);
 		
-		return grid;
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		
+		logIn.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				LoginPage loginPage = new LoginPage(main, scene);
+				main.setScene(loginPage.scene);
+			}
+		});
+		
+		account.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				CreateAccount createAccount = new CreateAccount(main, scene);
+				main.setScene(createAccount.scene);			
+			}
+		});
 	}
 }
