@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 public class SettingsPage {
 	
 	@SuppressWarnings("restriction")
-	public GridPane showPage(Stage main, Scene goBack){
+	public GridPane showPage(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
