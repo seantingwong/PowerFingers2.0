@@ -21,12 +21,13 @@ public class StartMenu extends Application{
 	Text title;
 	Button play;
 	Button scores;
+	Button test;
 	Button settings;
 	Button help;
 	Scene helpMenu;
 	Scene settingsPage;
-	int HEIGHT = 600;
-	int WIDTH = 500;
+	static int HEIGHT = 600;
+	static int WIDTH = 500;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
@@ -75,11 +76,24 @@ public class StartMenu extends Application{
 				stage.setScene(helpMenu);
 			}
 		});
+		
+		test = new Button("Test");
+		test.setStyle("-fx-background-color: LightGrey;");
+		test.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+//				LoginPage loginPage = new LoginPage(stage, scene);
+//				stage.setScene(loginPage.scene);
+				
+				CreateAccount createAccount = new CreateAccount(stage, scene);
+				stage.setScene(createAccount.scene);
+			}
+		});
+		
 		HelpMenu newHelp = new HelpMenu();
 		helpMenu = new Scene(newHelp.showHelp(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
 
 		SettingsPage newSettingsPage = new SettingsPage();
-		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), 700, 400, Color.DIMGRAY);
+		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
 
 
 		title.maxWidth(100);
@@ -99,6 +113,7 @@ public class StartMenu extends Application{
 		grid.add(scores, 0, 2);
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
+		grid.add(test, 0, 5);
 
 		stage.setScene(scene);
 		stage.show();
