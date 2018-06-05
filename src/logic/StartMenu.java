@@ -27,8 +27,6 @@ public class StartMenu extends Application{
 	Button test;
 	Button settings;
 	Button help;
-	Scene helpMenu;
-	Scene settingsPage;
 	static Scene playGame;
 	static Scene scene;
 
@@ -61,7 +59,8 @@ public class StartMenu extends Application{
 		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				scores.setText("clicked");
+				ScoreMenu newScore = new ScoreMenu(stage, scene);
+				stage.setScene(newScore.scene);
 			}
 		});
 		
