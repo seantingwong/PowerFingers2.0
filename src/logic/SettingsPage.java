@@ -23,6 +23,15 @@ public class SettingsPage {
 	
 	public SettingsPage(GridPane grid) {
 		scene = new Scene(grid, 700, 400, Color.DIMGRAY);
+		
+		settings = new Button("Settings");
+		settings.setStyle("-fx-background-color: LightGrey;");
+		settings.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				settings.setText("clicked");
+			}
+		});
+		
 	}
 
 }
