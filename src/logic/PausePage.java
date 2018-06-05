@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 public class PausePage {
 	public Scene scene;
 	
-	public PausePage(Stage stage, Scene goBack) {
+	public PausePage(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		

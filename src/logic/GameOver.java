@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
