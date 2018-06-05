@@ -28,6 +28,7 @@ public class StartMenu extends Application{
 	Button settings;
 	Button help;
 	Scene helpMenu;
+	Scene scoreMenu;
 	Scene settingsPage;
 	static int HEIGHT = 600;
 	static int WIDTH = 500;
@@ -62,7 +63,7 @@ public class StartMenu extends Application{
 		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				scores.setText("clicked");
+				stage.setScene(scoreMenu);
 			}
 		});
 		
@@ -108,6 +109,9 @@ public class StartMenu extends Application{
 
 		SettingsPage newSettingsPage = new SettingsPage();
 		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		
+		ScoreMenu newScore = new ScoreMenu();
+		scoreMenu = new Scene(newScore.showScore(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
 		
 		
 		title.maxWidth(100);
