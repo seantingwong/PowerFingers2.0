@@ -31,7 +31,7 @@ public class GameOver {
 		
 		Text title = new Text("Game Over");
 	    title.setStyle("-fx-font: 36 arial;");
-		grid.add(title, 5, 0);
+		//grid.add(title, 5, 0);
 		
 		Text score = new Text("You scored 1337 points!");
 		grid.add(score,  5,  8);

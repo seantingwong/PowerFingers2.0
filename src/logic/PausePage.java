@@ -50,7 +50,8 @@ public class PausePage {
 		Button settings = new Button("Settings");
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.settingsPage);
+				SettingsPage settingsPage = new SettingsPage(stage, scene);
+				stage.setScene(settingsPage.scene);
 			}
 		});
 		grid.add(settings, 5, 21);
