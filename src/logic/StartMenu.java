@@ -31,13 +31,14 @@ public class StartMenu extends Application{
 	Scene settingsPage;
 	static int HEIGHT = 600;
 	static int WIDTH = 500;
-	Scene playGame;
+	static Scene playGame;
+	static Scene scene;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
-		Scene scene = new Scene(grid, height, width, Color.DIMGRAY);
+		scene = new Scene(grid, height, width, Color.DIMGRAY);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
@@ -88,8 +89,14 @@ public class StartMenu extends Application{
 //				LoginPage loginPage = new LoginPage(stage, scene);
 //				stage.setScene(loginPage.scene);
 				
-				CreateAccount createAccount = new CreateAccount(stage, scene);
-				stage.setScene(createAccount.scene);
+//				CreateAccount createAccount = new CreateAccount(stage, scene);
+//				stage.setScene(createAccount.scene);
+			
+//				PausePage pausePage = new PausePage(stage, scene);
+//				stage.setScene(pausePage.scene);
+			
+				GameOver gameOver = new GameOver(stage, scene);
+				stage.setScene(gameOver.scene);
 			}
 		});
 		
