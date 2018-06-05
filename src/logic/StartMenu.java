@@ -14,10 +14,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
-import logic.HelpMenu;
-
 @SuppressWarnings("restriction")
 public class StartMenu extends Application{
+	// macros
+	int height = 600;
+	int width = 500;
+	String buttonColor = "-fx-background-color: LightGrey;";
+	
 	Text title;
 	Button play;
 	Button scores;
@@ -28,12 +31,13 @@ public class StartMenu extends Application{
 	Scene settingsPage;
 	static int HEIGHT = 600;
 	static int WIDTH = 500;
+	Scene playGame;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
-		Scene scene = new Scene(grid, HEIGHT, WIDTH, Color.DIMGRAY);
+		Scene scene = new Scene(grid, height, width, Color.DIMGRAY);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
@@ -46,15 +50,15 @@ public class StartMenu extends Application{
 	    title.setStyle("-fx-font: 36 arial;");
 	    
 		play = new Button("Play");
-		play.setStyle("-fx-background-color: LightGrey;");
+		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				play.setText("clicked");
+				stage.setScene(playGame);
 			}
 		});
 		
 		scores = new Button("Scores");
-		scores.setStyle("-fx-background-color: LightGrey;");
+		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				scores.setText("clicked");
@@ -62,7 +66,7 @@ public class StartMenu extends Application{
 		});
 		
 		settings = new Button("Settings");
-		settings.setStyle("-fx-background-color: LightGrey;");
+		settings.setStyle(buttonColor);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(settingsPage);
@@ -70,7 +74,7 @@ public class StartMenu extends Application{
 		});
 		
 		help = new Button("Help");
-		help.setStyle("-fx-background-color: LightGrey;");
+		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(helpMenu);
@@ -92,10 +96,13 @@ public class StartMenu extends Application{
 		HelpMenu newHelp = new HelpMenu();
 		helpMenu = new Scene(newHelp.showHelp(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
 
+		PlayGame newGame = new PlayGame();
+		playGame = new Scene(newGame.showPage(stage, scene), height, width, Color.DIMGRAY);
+
 		SettingsPage newSettingsPage = new SettingsPage();
 		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
-
-
+		
+		
 		title.maxWidth(100);
 		play.setMaxWidth(100);
 		scores.setMaxWidth(100);
