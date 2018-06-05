@@ -8,17 +8,16 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
+
 @SuppressWarnings("restriction")
-public class LoginPage {
-	
+public class GameOver {
 	public Scene scene;
 	
-	public LoginPage(Stage main, Scene goBack) {
+	public GameOver(Stage stage, Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -28,36 +27,20 @@ public class LoginPage {
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
-		Text title = new Text("Login");
+		Text title = new Text("The game is over.");
 		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
-	    
-	    Button back = new Button("Back");
-		back.setStyle("-fx-background-color: LightGrey;");
-		back.setOnAction(new EventHandler<ActionEvent>() {
+		grid.add(title, 5, 0);
+
+		Button goHome = new Button("Go Home");
+		goHome.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(goBack);
+				stage.setScene(StartMenu.scene);
 			}
 		});
-
-		grid.add(back, 0, 0);
-		grid.add(title, 5, 0);
-		
-		Text username = new Text("Username");
-		Text password = new Text("Password");
-		TextField usernameField = new TextField();
-		TextField passwordField = new TextField();
-		
-		grid.add(username, 1,  10);
-		grid.add(password, 1,  15);
-
-		grid.add(usernameField, 5, 10);
-		grid.add(passwordField, 5, 15);
-		
-		Button login = new Button("Login");
-		login.setMaxWidth(100);
-		grid.add(login, 5, 17);
+		grid.add(goHome, 5, 18);
 		
 		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
+
 }

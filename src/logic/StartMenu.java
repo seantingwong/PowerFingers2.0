@@ -29,13 +29,14 @@ public class StartMenu extends Application{
 	Button help;
 	Scene helpMenu;
 	Scene settingsPage;
-	Scene playGame;
+	static Scene playGame;
+	static Scene scene;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
-		Scene scene = new Scene(grid, height, width, Color.DIMGRAY);
+		scene = new Scene(grid, height, width, Color.DIMGRAY);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
@@ -51,7 +52,8 @@ public class StartMenu extends Application{
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(playGame);
+				PlayGame newGame = new PlayGame(stage, scene);
+				stage.setScene(newGame.scene);
 			}
 		});
 		
@@ -75,7 +77,8 @@ public class StartMenu extends Application{
 		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(helpMenu);
+				HelpMenu newHelp = new HelpMenu(stage, scene);
+				stage.setScene(newHelp.scene);
 			}
 		});
 		
@@ -86,16 +89,17 @@ public class StartMenu extends Application{
 //				LoginPage loginPage = new LoginPage(stage, scene);
 //				stage.setScene(loginPage.scene);
 				
-				CreateAccount createAccount = new CreateAccount(stage, scene);
-				stage.setScene(createAccount.scene);
+//				CreateAccount createAccount = new CreateAccount(stage, scene);
+//				stage.setScene(createAccount.scene);
+			
+//				PausePage pausePage = new PausePage(stage, scene);
+//				stage.setScene(pausePage.scene);
+			
+				GameOver gameOver = new GameOver(stage, scene);
+				stage.setScene(gameOver.scene);
 			}
 		});
-		
-		HelpMenu newHelp = new HelpMenu();
-		helpMenu = new Scene(newHelp.showPage(stage, scene), height, width, Color.DIMGRAY);
 
-		PlayGame newGame = new PlayGame();
-		playGame = new Scene(newGame.showPage(stage, scene, playGame), height, width, Color.DIMGRAY);
 
 		SettingsPage newSettingsPage = new SettingsPage();
 		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), height, width, Color.DIMGRAY);

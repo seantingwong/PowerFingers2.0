@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -15,12 +16,13 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayGame {
+	public Scene scene;
 	
 	Scene log;
 	Scene newAcc;
 	Scene guestAcc;
 	
-	public GridPane showPage(final Stage main, final Scene goBack, final Scene currScene){
+	public PlayGame(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -65,10 +67,10 @@ public class PlayGame {
 			}
 		});
 		
-		CreateAccount newCreate = new CreateAccount(main, currScene);
+		CreateAccount newCreate = new CreateAccount(main, scene);
 		newAcc = newCreate.scene;
 		
-		LoginPage newLog = new LoginPage(main, currScene);
+		LoginPage newLog = new LoginPage(main, scene);
 		log = newLog.scene;
 		
 		grid.add(back, 0, 0);
@@ -85,6 +87,6 @@ public class PlayGame {
 		GridPane.setHalignment(account, HPos.CENTER);
 		GridPane.setHalignment(guest, HPos.CENTER);
 		
-		return grid;
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
 }
