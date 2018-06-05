@@ -48,6 +48,8 @@ public class PlayGame {
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				//main.setScene(log);
+				LoginPage loginPage = new LoginPage(main, StartMenu.playGame);
+				main.setScene(loginPage.scene);
 			}
 		});
 		
@@ -55,8 +57,8 @@ public class PlayGame {
 		account.setStyle(buttonColor);
 		account.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				//main.setScene(newAcc);
-			}
+				CreateAccount createAccount = new CreateAccount(main, StartMenu.playGame);
+				main.setScene(createAccount.scene);			}
 		});
 		
 		Button guest = new Button("Play As Guest");
