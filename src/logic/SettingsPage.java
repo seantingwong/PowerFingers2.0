@@ -15,8 +15,6 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
-	// macros
-	String buttonColor = "-fx-background-color: LightGrey;";
 	
 	public GridPane showPage(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
@@ -36,7 +34,7 @@ public class SettingsPage {
 	    theme.setStyle("-fx-font: 24 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(buttonColor);
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -44,7 +42,7 @@ public class SettingsPage {
 		});
 		
 		Button blueButton = new Button("Blue");
-		blueButton.setStyle(buttonColor);
+		blueButton.setStyle(StartMenu.buttonColor);
 		blueButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Change theme to blue");
@@ -52,7 +50,7 @@ public class SettingsPage {
 		});
 		
 		Button redButton = new Button("Red");
-		redButton.setStyle(buttonColor);
+		redButton.setStyle(StartMenu.buttonColor);
 		redButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Change theme to red");
@@ -60,7 +58,7 @@ public class SettingsPage {
 		});
 		
 		Button greenButton = new Button("Green");
-		greenButton.setStyle(buttonColor);
+		greenButton.setStyle(StartMenu.buttonColor);
 		greenButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				System.out.println("Change theme to green");

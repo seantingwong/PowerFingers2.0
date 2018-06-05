@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	// macros
-	int height = 600;
-	int width = 500;
-	String buttonColor = "-fx-background-color: LightGrey;";
+	static int height = 600;
+	static int width = 500;
+	static String buttonColor = "-fx-background-color: LightGrey;";
 	
 	Text title;
 	Button play;
@@ -30,8 +30,6 @@ public class StartMenu extends Application{
 	Scene helpMenu;
 	Scene scoreMenu;
 	Scene settingsPage;
-	static int HEIGHT = 600;
-	static int WIDTH = 500;
 	static Scene playGame;
 	static Scene scene;
 
@@ -55,7 +53,8 @@ public class StartMenu extends Application{
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(playGame);
+				PlayGame newGame = new PlayGame(stage, scene);
+				stage.setScene(newGame.scene);
 			}
 		});
 		
@@ -79,7 +78,8 @@ public class StartMenu extends Application{
 		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(helpMenu);
+				HelpMenu newHelp = new HelpMenu(stage, scene);
+				stage.setScene(newHelp.scene);
 			}
 		});
 		
@@ -100,15 +100,10 @@ public class StartMenu extends Application{
 				stage.setScene(gameOver.scene);
 			}
 		});
-		
-		HelpMenu newHelp = new HelpMenu();
-		helpMenu = new Scene(newHelp.showHelp(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
 
-		PlayGame newGame = new PlayGame();
-		playGame = new Scene(newGame.showPage(stage, scene), height, width, Color.DIMGRAY);
 
 		SettingsPage newSettingsPage = new SettingsPage();
-		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), height, width, Color.DIMGRAY);
 		
 		ScoreMenu newScore = new ScoreMenu();
 		scoreMenu = new Scene(newScore.showScore(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);

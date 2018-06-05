@@ -1,29 +1,22 @@
 package logic;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
+@SuppressWarnings("restriction")
 public class GameOver {
-	
 	public Scene scene;
 	
-	@SuppressWarnings("restriction")
 	public GameOver(Stage stage, Scene goBack) {
 		
 		GridPane grid = new GridPane();
@@ -47,9 +40,7 @@ public class GameOver {
 		});
 		grid.add(goHome, 5, 18);
 		
-		
-		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, Color.DIMGRAY);
-		
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
 
 }
