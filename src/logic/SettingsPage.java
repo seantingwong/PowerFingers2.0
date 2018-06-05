@@ -19,19 +19,34 @@ import javafx.stage.Stage;
 
 public class SettingsPage {
 	
+	public GridPane grid;
 	public Scene scene;
 	
-	public SettingsPage(GridPane grid) {
-		scene = new Scene(grid, 700, 400, Color.DIMGRAY);
+	@SuppressWarnings("restriction")
+	public SettingsPage(Stage stage, Scene homeScene){
 		
-		settings = new Button("Settings");
-		settings.setStyle("-fx-background-color: LightGrey;");
-		settings.setOnAction(new EventHandler<ActionEvent>() {
+		grid = new GridPane();
+		
+        grid.setStyle("-fx-background-color: transparent;");
+		grid.setAlignment(Pos.CENTER);
+		grid.setHgap(5);
+		grid.setVgap(5);
+		grid.setPadding(new Insets(25, 25, 25, 25));
+		grid.getColumnConstraints().add(new ColumnConstraints(150));
+		
+		Button back = new Button("Back");
+		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				settings.setText("clicked");
+				back.setText("clicked");
+				System.out.println("OKay!");
+				stage.setScene(homeScene);
 			}
 		});
+		grid.add(back, 0, 0);
 		
+		scene = new Scene(grid, 700, 400, Color.DIMGRAY);
+
 	}
+	
 
 }
