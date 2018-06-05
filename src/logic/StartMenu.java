@@ -106,7 +106,7 @@ public class StartMenu extends Application{
 		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), height, width, Color.DIMGRAY);
 		
 		ScoreMenu newScore = new ScoreMenu();
-		scoreMenu = new Scene(newScore.showScore(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		scoreMenu = new Scene(newScore.showScore(stage, scene), height, width, Color.DIMGRAY);
 		
 		
 		title.maxWidth(100);
