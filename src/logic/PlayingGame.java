@@ -19,13 +19,12 @@ import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
-public class PausePage {
-	
+public class PlayingGame {
 	public Scene scene;
 	
 	@SuppressWarnings("restriction")
-	public PausePage(Stage stage, Scene goBack) {
-		
+	public PlayingGame(Stage stage, Scene goBack) {
+
 		GridPane grid = new GridPane();
 		
 		grid.setStyle("-fx-background-color: transparent;");
@@ -34,38 +33,35 @@ public class PausePage {
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
-		Text title = new Text("The game is paused.");
+		Text title = new Text("This is a placeholder.");
 		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
-		grid.add(title, 5, 0);
-
-	    Button back = new Button("Resume");
-		back.setStyle("-fx-background-color: LightGrey;");
-		back.setOnAction(new EventHandler<ActionEvent>() {
+	    
+	    Button pause = new Button("Pause");
+		pause.setStyle("-fx-background-color: LightGrey;");
+		pause.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(goBack);
+				PausePage pausePage = new PausePage(stage, scene);
+				stage.setScene(pausePage.scene);
 			}
 		});
-		grid.add(back, 5, 15);
 
-		Button goHome = new Button("Go Home");
-		goHome.setOnAction(new EventHandler<ActionEvent>() {
+		Button endGame = new Button("End Game");
+		endGame.setStyle("-fx-background-color: LightGrey;");
+		endGame.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.scene);
+				GameOver gameOver = new GameOver(stage, scene);
+				stage.setScene(gameOver.scene);
 			}
-		});
-		grid.add(goHome, 5, 18);
+		});		
 		
-		Button settings = new Button("Settings");
-		settings.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.settingsPage);
-			}
-		});
-		grid.add(settings, 5, 21);
+		grid.add(pause, 0, 0);
+		grid.add(endGame, 0, 5);
+		grid.add(title, 2, 0);
 		
 		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, Color.DIMGRAY);
-		
+
 	}
+
 
 }

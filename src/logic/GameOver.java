@@ -38,6 +38,9 @@ public class GameOver {
 		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
 		grid.add(title, 5, 0);
+		
+		Text score = new Text("You scored 1337 points!");
+		grid.add(score,  5,  8);
 
 		Button goHome = new Button("Go Home");
 		goHome.setOnAction(new EventHandler<ActionEvent>() {

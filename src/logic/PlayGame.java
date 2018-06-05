@@ -66,6 +66,8 @@ public class PlayGame {
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				//main.setScene(guestAcc);
+				PlayingGame playingGame = new PlayingGame(main, StartMenu.playGame);
+				main.setScene(playingGame.scene);
 			}
 		});
 		

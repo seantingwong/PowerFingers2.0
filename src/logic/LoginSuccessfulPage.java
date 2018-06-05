@@ -18,54 +18,63 @@ import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
+public class LoginSuccessfulPage {
 
-public class PausePage {
-	
+	String buttonColor = "-fx-background-color: LightGrey;";
 	public Scene scene;
-	
+
 	@SuppressWarnings("restriction")
-	public PausePage(Stage stage, Scene goBack) {
-		
+	public LoginSuccessfulPage(Stage stage, Scene goBack) {
 		GridPane grid = new GridPane();
 		
-		grid.setStyle("-fx-background-color: transparent;");
+        grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
-		Text title = new Text("The game is paused.");
+		Text title = new Text("Login Successful");
 		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
-		grid.add(title, 5, 0);
-
-	    Button back = new Button("Resume");
-		back.setStyle("-fx-background-color: LightGrey;");
+		
+		Button back = new Button("Back");
+		back.setStyle(buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				stage.setScene(goBack);
-			}
-		});
-		grid.add(back, 5, 15);
-
-		Button goHome = new Button("Go Home");
-		goHome.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.scene);
 			}
 		});
-		grid.add(goHome, 5, 18);
 		
-		Button settings = new Button("Settings");
-		settings.setOnAction(new EventHandler<ActionEvent>() {
+		Button logout = new Button("Logout");
+		logout.setStyle(buttonColor);
+		logout.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.settingsPage);
+				stage.setScene(StartMenu.playGame);
 			}
 		});
-		grid.add(settings, 5, 21);
+		
+		Button play = new Button("Play");
+		play.setStyle(buttonColor);
+		play.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				PlayingGame playingGame = new PlayingGame(stage, scene);
+				stage.setScene(playingGame.scene);
+			}
+		});
+	
+		
+		grid.add(back, 0, 0);
+		grid.add(title, 4, 0);
+		grid.add(logout, 4, 28);
+		grid.add(play, 4, 29);
+
+		logout.setMaxWidth(150);
+		play.setMaxWidth(150);
+
+		GridPane.setHalignment(play, HPos.CENTER);
+		GridPane.setHalignment(logout, HPos.CENTER);
 		
 		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, Color.DIMGRAY);
-		
 	}
 
 }

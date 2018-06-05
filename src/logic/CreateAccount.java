@@ -66,6 +66,12 @@ public class CreateAccount {
 		grid.add(password2Field, 5, 20);
 		
 		Button createAccount = new Button("Create Account");
+		createAccount.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(main, scene);
+				main.setScene(loginSuc.scene);
+			}
+		});
 //		createAccount.setMaxWidth(100);
 		grid.add(createAccount, 5, 23);
 		

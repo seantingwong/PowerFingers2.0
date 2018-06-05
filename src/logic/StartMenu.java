@@ -28,7 +28,7 @@ public class StartMenu extends Application{
 	Button settings;
 	Button help;
 	Scene helpMenu;
-	Scene settingsPage;
+	static Scene settingsPage;
 	static int HEIGHT = 600;
 	static int WIDTH = 500;
 	static Scene playGame;
@@ -95,8 +95,11 @@ public class StartMenu extends Application{
 //				PausePage pausePage = new PausePage(stage, scene);
 //				stage.setScene(pausePage.scene);
 			
-				GameOver gameOver = new GameOver(stage, scene);
-				stage.setScene(gameOver.scene);
+//				GameOver gameOver = new GameOver(stage, scene);
+//				stage.setScene(gameOver.scene);
+				
+				LoginSuccessfulPage loginSucc = new LoginSuccessfulPage(stage, scene);
+				stage.setScene(loginSucc.scene);
 			}
 		});
 		

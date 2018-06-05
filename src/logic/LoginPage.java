@@ -23,7 +23,7 @@ public class LoginPage {
 	public Scene scene;
 	
 	@SuppressWarnings("restriction")
-	public LoginPage(Stage main, Scene goBack) {
+	public LoginPage(Stage stage, Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -41,7 +41,7 @@ public class LoginPage {
 		back.setStyle("-fx-background-color: LightGrey;");
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(goBack);
+				stage.setScene(goBack);
 			}
 		});
 
@@ -62,6 +62,12 @@ public class LoginPage {
 		
 		Button login = new Button("Login");
 		login.setMaxWidth(100);
+		login.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(stage, scene);
+				stage.setScene(loginSuc.scene);
+			}
+		});	
 		grid.add(login, 5, 17);
 		
 		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, Color.DIMGRAY);
