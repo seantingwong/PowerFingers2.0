@@ -47,7 +47,8 @@ public class PlayGame {
 		logIn.setStyle(StartMenu.buttonColor);
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(log);
+				LoginPage loginPage = new LoginPage(main, StartMenu.playGame);
+				main.setScene(loginPage.scene);
 			}
 		});
 		
@@ -55,7 +56,8 @@ public class PlayGame {
 		account.setStyle(StartMenu.buttonColor);
 		account.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(newAcc);
+				CreateAccount createAccount = new CreateAccount(main, StartMenu.playGame);
+				main.setScene(createAccount.scene);			
 			}
 		});
 		
