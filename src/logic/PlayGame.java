@@ -15,14 +15,12 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayGame {
-	// macros
-	String buttonColor = "-fx-background-color: LightGrey;";
 	
 	Scene log;
 	Scene newAcc;
 	Scene guestAcc;
 	
-	public GridPane showPage(final Stage main, final Scene goBack){
+	public GridPane showPage(final Stage main, final Scene goBack, final Scene currScene){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -36,7 +34,7 @@ public class PlayGame {
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(buttonColor);
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -44,28 +42,34 @@ public class PlayGame {
 		});
 		
 		Button logIn = new Button("Log In");
-		logIn.setStyle(buttonColor);
+		logIn.setStyle(StartMenu.buttonColor);
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				//main.setScene(log);
+				main.setScene(log);
 			}
 		});
 		
 		Button account = new Button("Create Account");
-		account.setStyle(buttonColor);
+		account.setStyle(StartMenu.buttonColor);
 		account.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				//main.setScene(newAcc);
+				main.setScene(newAcc);
 			}
 		});
 		
 		Button guest = new Button("Play As Guest");
-		guest.setStyle(buttonColor);
+		guest.setStyle(StartMenu.buttonColor);
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				//main.setScene(guestAcc);
 			}
 		});
+		
+		CreateAccount newCreate = new CreateAccount(main, currScene);
+		newAcc = newCreate.scene;
+		
+		LoginPage newLog = new LoginPage(main, currScene);
+		log = newLog.scene;
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 4, 0);

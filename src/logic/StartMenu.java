@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	// macros
-	int height = 600;
-	int width = 500;
-	String buttonColor = "-fx-background-color: LightGrey;";
+	static int height = 600;
+	static int width = 500;
+	static String buttonColor = "-fx-background-color: LightGrey;";
 	
 	Text title;
 	Button play;
@@ -29,8 +29,6 @@ public class StartMenu extends Application{
 	Button help;
 	Scene helpMenu;
 	Scene settingsPage;
-	static int HEIGHT = 600;
-	static int WIDTH = 500;
 	Scene playGame;
 
 	@Override
@@ -94,13 +92,13 @@ public class StartMenu extends Application{
 		});
 		
 		HelpMenu newHelp = new HelpMenu();
-		helpMenu = new Scene(newHelp.showHelp(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		helpMenu = new Scene(newHelp.showPage(stage, scene), height, width, Color.DIMGRAY);
 
 		PlayGame newGame = new PlayGame();
-		playGame = new Scene(newGame.showPage(stage, scene), height, width, Color.DIMGRAY);
+		playGame = new Scene(newGame.showPage(stage, scene, playGame), height, width, Color.DIMGRAY);
 
 		SettingsPage newSettingsPage = new SettingsPage();
-		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), height, width, Color.DIMGRAY);
 		
 		
 		title.maxWidth(100);

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class HelpMenu {
-	public GridPane showHelp(final Stage main, final Scene goBack){
+	public GridPane showPage(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
