@@ -2,13 +2,11 @@ package logic;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
@@ -16,22 +14,23 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
+import logic.HelpMenu;
+
+@SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	Text title;
 	Button play;
 	Button scores;
 	Button settings;
 	Button help;
+	Scene helpMenu;
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
 		GridPane grid = new GridPane();
-		VBox root = new VBox();
-		root.setSpacing(10);
-		root.setPadding(new Insets(0, 20, 10, 20)); 
-        grid.setStyle("-fx-background-color: transparent;");
 		
+        grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
 		grid.setHgap(5);
 		grid.setVgap(5);
@@ -69,9 +68,11 @@ public class StartMenu extends Application{
 		help.setStyle("-fx-background-color: LightGrey;");
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				help.setText("clicked");
+				stage.setScene(helpMenu);
 			}
 		});
+		HelpMenu newHelp = new HelpMenu();
+		helpMenu = new Scene(newHelp.showHelp(), 700, 400, Color.DIMGRAY);
 
 		title.maxWidth(100);
 		play.setMaxWidth(100);
