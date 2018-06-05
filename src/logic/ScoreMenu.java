@@ -19,8 +19,8 @@ public class ScoreMenu {
 	
 	public ScoreMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
-		Button prsn = new Button("Personal");
-		Button top = new Button("Top");
+		final Button prsn = new Button("Personal");
+		final Button top = new Button("Top");
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
