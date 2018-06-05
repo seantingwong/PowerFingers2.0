@@ -18,7 +18,7 @@ public class LoginPage {
 	
 	public Scene scene;
 	
-	public LoginPage(Stage main, Scene goBack) {
+	public LoginPage(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
