@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
+import javafx.geometry.HPos;
 import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
@@ -41,27 +42,31 @@ public class CreateAccount {
 		});
 
 		grid.add(back, 0, 0);
-		grid.add(title, 5, 0);
+		grid.add(title, 1, 0);
 		
 		Text username = new Text("Username");
+		GridPane.setHalignment(username, HPos.RIGHT);
 		Text password = new Text("Password");
+		GridPane.setHalignment(password, HPos.RIGHT);
 		Text password2 = new Text("Confirm Password");
+		GridPane.setHalignment(password2, HPos.RIGHT);
 		
 		TextField usernameField = new TextField();
 		TextField passwordField = new TextField();
 		TextField password2Field = new TextField();
 		
-		grid.add(username, 1,  10);
-		grid.add(password, 1,  15);
-		grid.add(password2, 1,  20);
+		grid.add(username, 0,  16);
+		grid.add(password, 0,  17);
+		grid.add(password2, 0,  18);
 
-		grid.add(usernameField, 5, 10);
-		grid.add(passwordField, 5, 15);
-		grid.add(password2Field, 5, 20);
+		grid.add(usernameField, 1, 16);
+		grid.add(passwordField, 1, 17);
+		grid.add(password2Field, 1, 18);
 		
 		Button createAccount = new Button("Create Account");
-//		createAccount.setMaxWidth(100);
-		grid.add(createAccount, 5, 23);
+		GridPane.setHalignment(createAccount, HPos.CENTER);
+		createAccount.setMaxWidth(150);
+		grid.add(createAccount, 1, 19);
 		
 		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}

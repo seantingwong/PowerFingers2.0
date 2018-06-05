@@ -69,7 +69,8 @@ public class StartMenu extends Application{
 		settings.setStyle(buttonColor);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(settingsPage);
+				SettingsPage newSettingsPage = new SettingsPage(stage, scene);
+				stage.setScene(newSettingsPage.scene);
 			}
 		});
 		
@@ -99,11 +100,6 @@ public class StartMenu extends Application{
 				stage.setScene(gameOver.scene);
 			}
 		});
-
-
-		SettingsPage newSettingsPage = new SettingsPage();
-		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), height, width, Color.DIMGRAY);
-		
 		
 		title.maxWidth(100);
 		play.setMaxWidth(100);

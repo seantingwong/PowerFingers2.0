@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -15,8 +16,9 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
+	public Scene scene;
 	
-	public GridPane showPage(final Stage main, final Scene goBack){
+	public SettingsPage(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -81,7 +83,7 @@ public class SettingsPage {
 		GridPane.setHalignment(redButton, HPos.CENTER);
 		GridPane.setHalignment(greenButton, HPos.CENTER);
 		
-		return grid;
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
 	
 	

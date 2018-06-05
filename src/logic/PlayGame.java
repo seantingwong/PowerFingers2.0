@@ -45,21 +45,9 @@ public class PlayGame {
 		
 		Button logIn = new Button("Log In");
 		logIn.setStyle(StartMenu.buttonColor);
-		logIn.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				LoginPage loginPage = new LoginPage(main, StartMenu.playGame);
-				main.setScene(loginPage.scene);
-			}
-		});
 		
 		Button account = new Button("Create Account");
 		account.setStyle(StartMenu.buttonColor);
-		account.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				CreateAccount createAccount = new CreateAccount(main, StartMenu.playGame);
-				main.setScene(createAccount.scene);			
-			}
-		});
 		
 		Button guest = new Button("Play As Guest");
 		guest.setStyle(StartMenu.buttonColor);
@@ -90,5 +78,19 @@ public class PlayGame {
 		GridPane.setHalignment(guest, HPos.CENTER);
 		
 		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		
+		logIn.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				LoginPage loginPage = new LoginPage(main, scene);
+				main.setScene(loginPage.scene);
+			}
+		});
+		
+		account.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				CreateAccount createAccount = new CreateAccount(main, scene);
+				main.setScene(createAccount.scene);			
+			}
+		});
 	}
 }
