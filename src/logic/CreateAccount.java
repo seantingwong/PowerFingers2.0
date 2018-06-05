@@ -19,7 +19,7 @@ public class CreateAccount {
 	
 	public Scene scene;
 	
-	public CreateAccount(Stage main, Scene goBack) {
+	public CreateAccount(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -30,7 +30,6 @@ public class CreateAccount {
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Create Account");
-		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
 	    
 	    Button back = new Button("Back");

@@ -69,10 +69,10 @@ public class SettingsPage {
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 11, 0);
-		grid.add(theme, 11, 27);
-		grid.add(blueButton, 11, 28);
-		grid.add(redButton, 11, 29);
-		grid.add(greenButton, 11, 30);
+		grid.add(theme, 11, 15);
+		grid.add(blueButton, 11, 16);
+		grid.add(redButton, 11, 17);
+		grid.add(greenButton, 11, 18);
 
 		blueButton.setMaxWidth(100);
 		redButton.setMaxWidth(100);

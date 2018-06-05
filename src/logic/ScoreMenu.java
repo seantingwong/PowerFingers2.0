@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class ScoreMenu {
 	public Scene scene;
 	
-	public ScoreMenu(Stage main, Scene goBack){
+	public ScoreMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		Button prsn = new Button("Personal");
 		Button top = new Button("Top");

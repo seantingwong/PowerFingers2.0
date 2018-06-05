@@ -10,7 +10,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
@@ -32,7 +31,6 @@ public class PlayGame {
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Play A Game");
-		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");

@@ -8,8 +8,9 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
+import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
 
@@ -17,18 +18,18 @@ import javafx.stage.Stage;
 public class GameOver {
 	public Scene scene;
 	
-	public GameOver(Stage stage, Scene goBack) {
+	public GameOver(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
+		grid.setAlignment(Pos.CENTER);
 		grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
-		Text title = new Text("The game is over.");
-		GridPane.setValignment(title, VPos.CENTER);
+		Text title = new Text("Game Over");
 	    title.setStyle("-fx-font: 36 arial;");
 		grid.add(title, 5, 0);
 		
@@ -41,9 +42,13 @@ public class GameOver {
 				stage.setScene(StartMenu.scene);
 			}
 		});
-		grid.add(goHome, 5, 18);
+		
+		GridPane.setHalignment(title, HPos.CENTER);
+		GridPane.setHalignment(goHome, HPos.CENTER);
+
+		grid.add(title, 0, 0);
+		grid.add(goHome, 0, 18);
 		
 		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
-
 }
