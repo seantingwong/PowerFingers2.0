@@ -33,6 +33,10 @@ public class SettingsPage {
 		Text title = new Text("Settings");
 		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
+	    
+		Text theme = new Text("Theme");
+		GridPane.setValignment(theme, VPos.CENTER);
+	    theme.setStyle("-fx-font: 24 arial;");
 		
 		Button back = new Button("Back");
 		back.setStyle("-fx-background-color: LightGrey;");
@@ -67,15 +71,20 @@ public class SettingsPage {
 		});
 		
 		grid.add(back, 0, 0);
-		grid.add(title, 28, 0);
-		
-		Text theme = new Text("Theme");
-		grid.add(theme, 28, 22);
-		
-		grid.add(blueButton, 28, 28);
-		grid.add(redButton, 28, 32);
-		grid.add(greenButton, 28, 36);
-		
+		grid.add(title, 11, 0);
+		grid.add(theme, 11, 27);
+		grid.add(blueButton, 11, 28);
+		grid.add(redButton, 11, 29);
+		grid.add(greenButton, 11, 30);
+
+		blueButton.setMaxWidth(100);
+		redButton.setMaxWidth(100);
+		greenButton.setMaxWidth(100);
+
+		GridPane.setHalignment(theme, HPos.CENTER);
+		GridPane.setHalignment(blueButton, HPos.CENTER);
+		GridPane.setHalignment(redButton, HPos.CENTER);
+		GridPane.setHalignment(greenButton, HPos.CENTER);
 		
 		return grid;
 	}

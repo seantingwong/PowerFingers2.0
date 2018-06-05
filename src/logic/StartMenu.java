@@ -75,12 +75,13 @@ public class StartMenu extends Application{
 				stage.setScene(helpMenu);
 			}
 		});
-		HelpMenu newHelp = new HelpMenu();
-		helpMenu = new Scene(newHelp.showHelp(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		
 
 		SettingsPage newSettingsPage = new SettingsPage();
-		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), 700, 400, Color.DIMGRAY);
-
+		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
+		
+		HelpMenu newHelp = new HelpMenu();
+		helpMenu = new Scene(newHelp.showHelp(stage, scene), HEIGHT, WIDTH, Color.DIMGRAY);
 
 		title.maxWidth(100);
 		play.setMaxWidth(100);
