@@ -1,21 +1,23 @@
 package logic;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.geometry.VPos;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class HelpMenu {
-	public GridPane showHelp(Stage main, Scene goBack){
+	public GridPane showHelp(final Stage main, final Scene goBack) throws FileNotFoundException{
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -25,7 +27,6 @@ public class HelpMenu {
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Help");
-		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
@@ -36,8 +37,11 @@ public class HelpMenu {
 			}
 		});
 		
+		final ImageView guide = new ImageView(new Image("http://oakdome.com/k5/lesson-plans/word/images/proper-finger-placement-for-keyboarding-550.gif"));
+		
 		grid.add(back, 0, 0);
-		grid.add(title, 28, 0);
+		grid.add(title, 18, 0);
+		grid.add(guide, 0, 3);
 		return grid;
 	}
 }
