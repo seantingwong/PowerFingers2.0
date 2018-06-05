@@ -1,7 +1,5 @@
 package logic;
 
-import java.io.FileNotFoundException;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -16,7 +14,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class HelpMenu {
-	public GridPane showHelp(final Stage main, final Scene goBack) throws FileNotFoundException{
+	public GridPane showHelp(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");

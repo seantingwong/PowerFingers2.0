@@ -14,10 +14,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
-import logic.HelpMenu;
-
 @SuppressWarnings("restriction")
 public class StartMenu extends Application{
+	// macros
+	int height = 600;
+	int width = 500;
+	String buttonColor = "-fx-background-color: LightGrey;";
+	
 	Text title;
 	Button play;
 	Button scores;
@@ -25,9 +28,7 @@ public class StartMenu extends Application{
 	Button help;
 	Scene helpMenu;
 	Scene settingsPage;
-	int height = 600;
-	int width = 500;
-	String buttonColor = "-fx-background-color: LightGrey;";
+	Scene playGame;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
@@ -49,7 +50,7 @@ public class StartMenu extends Application{
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				play.setText("clicked");
+				stage.setScene(playGame);
 			}
 		});
 		
@@ -76,7 +77,9 @@ public class StartMenu extends Application{
 				stage.setScene(helpMenu);
 			}
 		});
-		
+
+		PlayGame newGame = new PlayGame();
+		playGame = new Scene(newGame.showPage(stage, scene), height, width, Color.DIMGRAY);
 
 		SettingsPage newSettingsPage = new SettingsPage();
 		settingsPage = new Scene(newSettingsPage.showPage(stage, scene), height, width, Color.DIMGRAY);

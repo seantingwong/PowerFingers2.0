@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
+	// macros
 	String buttonColor = "-fx-background-color: LightGrey;";
 	
 	public GridPane showPage(final Stage main, final Scene goBack){
