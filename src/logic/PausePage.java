@@ -9,7 +9,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
@@ -28,7 +27,6 @@ public class PausePage {
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("The game is paused.");
-		GridPane.setValignment(title, VPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
 		grid.add(title, 5, 0);
 

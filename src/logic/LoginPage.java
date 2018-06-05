@@ -9,8 +9,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
@@ -29,7 +29,7 @@ public class LoginPage {
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Login");
-		GridPane.setValignment(title, VPos.CENTER);
+		GridPane.setHalignment(title, HPos.CENTER);
 	    title.setStyle("-fx-font: 36 arial;");
 	    
 	    Button back = new Button("Back");
@@ -41,22 +41,25 @@ public class LoginPage {
 		});
 
 		grid.add(back, 0, 0);
-		grid.add(title, 5, 0);
+		grid.add(title, 3, 0);
 		
 		Text username = new Text("Username");
+		GridPane.setHalignment(username, HPos.RIGHT);
 		Text password = new Text("Password");
+		GridPane.setHalignment(password, HPos.RIGHT);
 		TextField usernameField = new TextField();
 		TextField passwordField = new TextField();
 		
-		grid.add(username, 1,  10);
-		grid.add(password, 1,  15);
+		grid.add(username, 0, 14);
+		grid.add(password, 0, 15);
 
-		grid.add(usernameField, 5, 10);
-		grid.add(passwordField, 5, 15);
+		grid.add(usernameField, 3, 14);
+		grid.add(passwordField, 3, 15);
 		
 		Button login = new Button("Login");
+		GridPane.setHalignment(login, HPos.CENTER);
 		login.setMaxWidth(100);
-		grid.add(login, 5, 17);
+		grid.add(login, 3, 17);
 		
 		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
