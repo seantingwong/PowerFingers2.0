@@ -60,6 +60,7 @@ public class LoginPage {
 		GridPane.setHalignment(login, HPos.CENTER);
 		login.setMaxWidth(100);
 		login.setOnAction(new EventHandler<ActionEvent>() {
+			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
 				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(stage);
 				stage.setScene(loginSuc.scene);

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PausePage {
-	static public Scene scene;
+	public static Scene scene;
 	
 	public PausePage(final Stage stage, final Scene goBack) {
 		
@@ -49,6 +49,7 @@ public class PausePage {
 		
 		Button settings = new Button("Settings");
 		settings.setOnAction(new EventHandler<ActionEvent>() {
+			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
 				SettingsPage settingsPage = new SettingsPage(stage, scene);
 				stage.setScene(settingsPage.scene);

@@ -51,6 +51,7 @@ public class LoginSuccessfulPage {
 		Button play = new Button("Play");
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
+			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
 				PlayingGame playingGame = new PlayingGame(stage, scene);
 				stage.setScene(playingGame.scene);

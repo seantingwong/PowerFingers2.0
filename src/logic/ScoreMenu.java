@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
-	static public Scene scene;
+	public static Scene scene;
 	
 	public ScoreMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();

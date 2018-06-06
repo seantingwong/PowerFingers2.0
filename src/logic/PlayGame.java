@@ -15,12 +15,13 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayGame {
-	static public Scene scene;
+	public static Scene scene;
 	
 	Scene log;
 	Scene newAcc;
 	Scene guestAcc;
 	
+	@SuppressWarnings("static-access")
 	public PlayGame(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
