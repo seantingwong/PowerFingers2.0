@@ -1,30 +1,25 @@
 package logic;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
+@SuppressWarnings("restriction")
 public class LoginSuccessfulPage {
 
 	String buttonColor = "-fx-background-color: LightGrey;";
 	public Scene scene;
 
-	@SuppressWarnings("restriction")
-	public LoginSuccessfulPage(Stage stage, Scene goBack) {
+	public LoginSuccessfulPage(final Stage stage, final Scene goBack) {
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");

@@ -53,7 +53,7 @@ public class ScoreMenu {
 		});
 		
 		//Personal Scores Button
-		prsn.setStyle("-fx-background-color: LightGreay);");
+		prsn.setStyle("-fx-background-color: LightGrey;");
 		prsn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				prsn.setText("clicked");

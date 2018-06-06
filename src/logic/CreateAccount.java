@@ -10,7 +10,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
 import javafx.geometry.HPos;
 import javafx.stage.Stage;
 

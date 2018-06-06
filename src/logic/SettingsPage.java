@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -43,29 +45,48 @@ public class SettingsPage {
 			}
 		});
 		
-		Button blueButton = new Button("Blue");
-		blueButton.setStyle(StartMenu.buttonColor);
+		final ToggleGroup group = new ToggleGroup();
+		RadioButton blueButton = new RadioButton("Blue");
+		blueButton.setTextFill(Color.WHITE);
 		blueButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				StartMenu.backgroundColor = Color.LIGHTSKYBLUE;
+				StartMenu.colorSelected = 0;
 			}
 		});
+		blueButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 0)
+		{
+			blueButton.setSelected(true);
+		}
 		
-		Button redButton = new Button("Red");
-		redButton.setStyle(StartMenu.buttonColor);
+		RadioButton redButton = new RadioButton("Red");
+		redButton.setTextFill(Color.WHITE);
 		redButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				StartMenu.backgroundColor = Color.INDIANRED;
+				StartMenu.colorSelected = 1;
 			}
 		});
+		redButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 1)
+		{
+			redButton.setSelected(true);
+		}
 		
-		Button greenButton = new Button("Green");
-		greenButton.setStyle(StartMenu.buttonColor);
+		RadioButton greenButton = new RadioButton("Green");
+		greenButton.setTextFill(Color.WHITE);
 		greenButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				StartMenu.backgroundColor = Color.DARKSEAGREEN;
+				StartMenu.colorSelected = 2;
 			}
 		});
+		greenButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 2)
+		{
+			greenButton.setSelected(true);
+		}
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 11, 0);
