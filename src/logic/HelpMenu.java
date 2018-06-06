@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class HelpMenu {
-	public Scene scene;
+	static public Scene scene;
 	
 	public HelpMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();

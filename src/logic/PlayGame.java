@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayGame {
-	public Scene scene;
+	static public Scene scene;
 	
 	Scene log;
 	Scene newAcc;
@@ -51,7 +51,6 @@ public class PlayGame {
 		guest.setStyle(StartMenu.buttonColor);
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				//main.setScene(guestAcc);
 				PlayingGame playingGame = new PlayingGame(main, StartMenu.playGame);
 				main.setScene(playingGame.scene);
 			}

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayingGame {
-	public Scene scene;
+	static public Scene scene;
 	
 	public PlayingGame(final Stage stage, final Scene goBack) {
 
@@ -45,7 +45,7 @@ public class PlayingGame {
 		endGame.setStyle("-fx-background-color: LightGrey;");
 		endGame.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				GameOver gameOver = new GameOver(stage, scene);
+				GameOver gameOver = new GameOver(stage);
 				stage.setScene(gameOver.scene);
 			}
 		});		

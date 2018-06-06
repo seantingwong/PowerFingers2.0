@@ -64,7 +64,7 @@ public class CreateAccount {
 		Button createAccount = new Button("Create Account");
 		createAccount.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(main, scene);
+				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(main);
 				main.setScene(loginSuc.scene);
 			}
 		});

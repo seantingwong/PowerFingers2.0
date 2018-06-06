@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class GameOver {
-	public Scene scene;
+	static public Scene scene;
 	
-	public GameOver(final Stage stage, final Scene goBack) {
+	public GameOver(final Stage stage) {
 		
 		GridPane grid = new GridPane();
 		
@@ -31,7 +31,6 @@ public class GameOver {
 		
 		Text title = new Text("Game Over");
 	    title.setStyle("-fx-font: 36 arial;");
-		//grid.add(title, 5, 0);
 		
 		Text score = new Text("You scored 72 words/minute!");
 		grid.add(score, 0,  8);

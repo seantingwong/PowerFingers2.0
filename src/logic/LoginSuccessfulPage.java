@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 public class LoginSuccessfulPage {
 
 	String buttonColor = "-fx-background-color: LightGrey;";
-	public Scene scene;
+	public static Scene scene;
 
-	public LoginSuccessfulPage(final Stage stage, final Scene goBack) {
+	public LoginSuccessfulPage(final Stage stage) {
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");

@@ -31,8 +31,8 @@ public class StartMenu extends Application{
 	Scene helpMenu;
 	static Scene settingsPage;
 	static Scene playGame;
-	static Scene scene;
-	static int colorSelected = 0;
+	public static Scene scene;
+	public static int colorSelected = 0;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
@@ -86,27 +86,6 @@ public class StartMenu extends Application{
 			}
 		});
 		
-//		test = new Button("Test");
-//		test.setStyle("-fx-background-color: LightGrey;");
-//		test.setOnAction(new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent event) {
-////				LoginPage loginPage = new LoginPage(stage, scene);
-////				stage.setScene(loginPage.scene);
-//				
-////				CreateAccount createAccount = new CreateAccount(stage, scene);
-////				stage.setScene(createAccount.scene);
-//			
-////				PausePage pausePage = new PausePage(stage, scene);
-////				stage.setScene(pausePage.scene);
-//			
-////				GameOver gameOver = new GameOver(stage, scene);
-////				stage.setScene(gameOver.scene);
-//				
-//				LoginSuccessfulPage loginSucc = new LoginSuccessfulPage(stage, scene);
-//				stage.setScene(loginSucc.scene);
-//			}
-//		});
-		
 		title.maxWidth(100);
 		play.setMaxWidth(100);
 		scores.setMaxWidth(100);
@@ -124,7 +103,6 @@ public class StartMenu extends Application{
 		grid.add(scores, 0, 2);
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
-//		grid.add(test, 0, 5);
 
 		stage.setScene(scene);
 		stage.show();

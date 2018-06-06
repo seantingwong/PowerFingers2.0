@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PausePage {
-	public Scene scene;
+	static public Scene scene;
 	
 	public PausePage(final Stage stage, final Scene goBack) {
 		

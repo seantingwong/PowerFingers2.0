@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
-	public Scene scene;
+	static public Scene scene;
 	
 	public ScoreMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
@@ -36,7 +36,7 @@ public class ScoreMenu {
 		
 	    //Back Button
 		Button back = new Button("Back");
-		back.setStyle("-fx-background-color: LightGrey;");
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -44,7 +44,7 @@ public class ScoreMenu {
 		});
 		
 		//Toggle Scores Button
-		top.setStyle("-fx-background-color: LightGrey;");
+		top.setStyle(StartMenu.buttonColor);
 		top.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				top.setText("clicked");
@@ -53,7 +53,7 @@ public class ScoreMenu {
 		});
 		
 		//Personal Scores Button
-		prsn.setStyle("-fx-background-color: LightGrey;");
+		prsn.setStyle(StartMenu.buttonColor);
 		prsn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				prsn.setText("clicked");

@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
-	public Scene scene;
+	static public Scene scene;
 	
 	public SettingsPage(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();

@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class LoginPage {
 	
-	public Scene scene;
+	static public Scene scene;
 	
 	public LoginPage(final Stage stage, final Scene goBack) {
 		
@@ -61,7 +61,7 @@ public class LoginPage {
 		login.setMaxWidth(100);
 		login.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(stage, scene);
+				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(stage);
 				stage.setScene(loginSuc.scene);
 			}
 		});	
