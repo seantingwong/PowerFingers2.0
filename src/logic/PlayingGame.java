@@ -59,7 +59,7 @@ public class PlayingGame {
 		grid.add(endGame, 0, 5);
 		grid.add(title, 2, 0);
 		
-		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, Color.DIMGRAY);
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundColor);
 
 	}
 
