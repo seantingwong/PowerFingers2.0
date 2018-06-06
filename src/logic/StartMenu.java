@@ -83,10 +83,8 @@ public class StartMenu extends Application{
 		help = new Button("Help");
 		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
-				HelpMenu newHelp = new HelpMenu(stage, scene);
-				stage.setScene(newHelp.scene);
+				stage.setScene(HelpMenu.Help(stage, scene));
 			}
 		});
 		
