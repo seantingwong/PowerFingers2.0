@@ -20,6 +20,7 @@ public class StartMenu extends Application{
 	static int height = 600;
 	static int width = 500;
 	static String buttonColor = "-fx-background-color: LightGrey;";
+	static Color backgroundColor = Color.LIGHTSKYBLUE;
 	
 	Text title;
 	Button play;
@@ -29,8 +30,6 @@ public class StartMenu extends Application{
 	Button help;
 	Scene helpMenu;
 	static Scene settingsPage;
-	static int HEIGHT = 600;
-	static int WIDTH = 500;
 	static Scene playGame;
 	static Scene scene;
 

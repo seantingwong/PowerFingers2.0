@@ -47,7 +47,7 @@ public class SettingsPage {
 		blueButton.setStyle(StartMenu.buttonColor);
 		blueButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				System.out.println("Change theme to blue");
+				StartMenu.backgroundColor = Color.LIGHTSKYBLUE;
 			}
 		});
 		
@@ -55,7 +55,7 @@ public class SettingsPage {
 		redButton.setStyle(StartMenu.buttonColor);
 		redButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				System.out.println("Change theme to red");
+				StartMenu.backgroundColor = Color.INDIANRED;
 			}
 		});
 		
@@ -63,7 +63,7 @@ public class SettingsPage {
 		greenButton.setStyle(StartMenu.buttonColor);
 		greenButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				System.out.println("Change theme to green");
+				StartMenu.backgroundColor = Color.DARKSEAGREEN;
 			}
 		});
 		

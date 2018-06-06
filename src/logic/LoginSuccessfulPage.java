@@ -74,7 +74,7 @@ public class LoginSuccessfulPage {
 		GridPane.setHalignment(play, HPos.CENTER);
 		GridPane.setHalignment(logout, HPos.CENTER);
 		
-		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, Color.DIMGRAY);
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
 
 }
