@@ -54,7 +54,7 @@ public class StartMenu extends Application{
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(PlayGame.Play(stage, scene));
+				stage.setScene(PlayGame.play(stage, scene));
 			}
 		});
 		
@@ -62,7 +62,7 @@ public class StartMenu extends Application{
 		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(ScoreMenu.Score(stage, scene));
+				stage.setScene(ScoreMenu.score(stage, scene));
 			}
 		});
 		
@@ -70,7 +70,7 @@ public class StartMenu extends Application{
 		settings.setStyle(buttonColor);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(SettingsPage.Settings(stage, scene));
+				stage.setScene(SettingsPage.settings(stage, scene));
 			}
 		});
 		
@@ -78,7 +78,7 @@ public class StartMenu extends Application{
 		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(HelpMenu.Help(stage, scene));
+				stage.setScene(HelpMenu.help(stage, scene));
 			}
 		});
 		

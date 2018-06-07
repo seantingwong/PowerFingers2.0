@@ -17,7 +17,7 @@ public class PausePage {
 
 	private PausePage(){}
 	
-	public static Scene Pause(final Stage stage, final Scene goBack) {
+	public static Scene pause(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -51,7 +51,7 @@ public class PausePage {
 		Button settings = new Button("Settings");
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(SettingsPage.Settings(stage, goBack));
+				stage.setScene(SettingsPage.settings(stage, goBack));
 			}
 		});
 		grid.add(settings, 5, 21);

@@ -18,7 +18,7 @@ public class PlayingGame {
 	
 	private PlayingGame(){}
 	
-	public static Scene Game(final Stage stage, final Scene goBack) {
+	public static Scene game(final Stage stage, final Scene goBack) {
 
 		GridPane grid = new GridPane();
 		
@@ -39,10 +39,8 @@ public class PlayingGame {
 		Button endGame = new Button("End Game");
 		endGame.setStyle("-fx-background-color: LightGrey;");
 		endGame.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
-				GameOver gameOver = new GameOver(stage);
-				stage.setScene(gameOver.scene);
+				stage.setScene(GameOver.over(stage));
 			}
 		});		
 		
@@ -55,7 +53,7 @@ public class PlayingGame {
 		
 		pause.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(PausePage.Pause(stage, goBack));
+				stage.setScene(PausePage.pause(stage, goBack));
 			}
 		});
 		

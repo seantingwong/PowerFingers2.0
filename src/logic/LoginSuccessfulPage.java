@@ -18,7 +18,7 @@ public class LoginSuccessfulPage {
 	
 	private LoginSuccessfulPage(){}
 
-	public static Scene LoginSuccessful(final Stage stage) {
+	public static Scene loginSuccessful(final Stage stage) {
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -65,7 +65,7 @@ public class LoginSuccessfulPage {
 		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(PlayingGame.Game(stage, scene));
+				stage.setScene(PlayingGame.game(stage, scene));
 			}
 		});
 		return(scene);

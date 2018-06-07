@@ -18,7 +18,7 @@ public class LoginPage {
 	
 	private LoginPage(){}
 	
-	public static Scene Login(final Stage stage, final Scene goBack) {
+	public static Scene login(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -61,7 +61,7 @@ public class LoginPage {
 		login.setMaxWidth(100);
 		login.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(LoginSuccessfulPage.LoginSuccessful(stage));
+				stage.setScene(LoginSuccessfulPage.loginSuccessful(stage));
 			}
 		});	
 

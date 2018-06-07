@@ -18,7 +18,7 @@ public class HelpMenu {
 	
 	private HelpMenu(){}
 	
-	public static Scene Help(final Stage main, final Scene goBack){
+	public static Scene help(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");

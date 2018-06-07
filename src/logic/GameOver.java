@@ -16,9 +16,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class GameOver {
-	static public Scene scene;
 	
-	public GameOver(final Stage stage) {
+	public static Scene over(final Stage stage) {
 		
 		GridPane grid = new GridPane();
 		
@@ -48,6 +47,7 @@ public class GameOver {
 		grid.add(title, 0, 0);
 		grid.add(goHome, 0, 18);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

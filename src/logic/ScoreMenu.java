@@ -18,7 +18,7 @@ public class ScoreMenu {
 	
 	private ScoreMenu(){}
 	
-	public static Scene Score(final Stage main, final Scene goBack){
+	public static Scene score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		final Button prsn = new Button("Personal");
 		final Button top = new Button("Top");

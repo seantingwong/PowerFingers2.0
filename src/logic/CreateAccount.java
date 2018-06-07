@@ -18,7 +18,7 @@ public class CreateAccount {
 	
 	private CreateAccount(){}
 	
-	public static Scene Account(final Stage main, final Scene goBack) {
+	public static Scene account(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -64,7 +64,7 @@ public class CreateAccount {
 		Button createAccount = new Button("Create Account");
 		createAccount.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(LoginSuccessfulPage.LoginSuccessful(main));
+				main.setScene(LoginSuccessfulPage.loginSuccessful(main));
 			}
 		});
 		GridPane.setHalignment(createAccount, HPos.CENTER);
