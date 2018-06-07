@@ -20,11 +20,11 @@ public class StartMenu extends Application{
 	public static final int HEIGHT = 600;
 	public static final int WIDTH = 500;
 	public static final String BUTTONCOLOR = "-fx-background-color: LightGrey;";
-	public static Color backgroundColor = Color.LIGHTSKYBLUE;
+	static Color backgroundColor = Color.LIGHTSKYBLUE;
 	static Color backgroundMain = Color.WHITE;
 	static Scene settingsPage;
 	static Scene playGame;
-	public static int colorSelected = 0;
+	static int colorSelected = 0;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
