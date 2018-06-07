@@ -22,8 +22,6 @@ public class StartMenu extends Application{
 	static String buttonColor = "-fx-background-color: LightGrey;";
 	static Color backgroundColor = Color.LIGHTSKYBLUE;
 	static Color backgroundMain = Color.WHITE;
-	
-
 	static Scene settingsPage;
 	static Scene playGame;
 	static int colorSelected = 0;
