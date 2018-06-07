@@ -52,7 +52,7 @@ public class PausePage {
 		settings.setStyle(StartMenu.buttonColor);
 		grid.add(settings, 5, 21);		
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(SettingsPage.settings(stage, scene));
