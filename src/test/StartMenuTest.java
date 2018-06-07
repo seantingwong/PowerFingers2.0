@@ -1,3 +1,4 @@
+// Sean Wong
 package test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,14 +11,12 @@ public class StartMenuTest {
 	@Test
 	public void checkBackGround()
 	{
-		StartMenu test = new StartMenu();
-		assertEquals(test.backgroundColor, Color.LIGHTSKYBLUE);
+		assertEquals(Color.LIGHTSKYBLUE, StartMenu.backgroundColor);
 	}
 	
 	@Test
 	public void checkButton()
 	{
-		StartMenu test = new StartMenu();
-		assertEquals(test.buttonColor, "-fx-background-color: LightGrey;");
+		assertEquals("-fx-background-color: LightGrey;", StartMenu.buttonColor);
 	}
 }

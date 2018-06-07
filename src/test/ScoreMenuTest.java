@@ -1,3 +1,4 @@
+// Jessi Trieu
 package test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,13 +11,11 @@ public class ScoreMenuTest {
 	
 	@Test
 	public void checkWidth() {
-		ScoreMenu test = new ScoreMenu();
-		assertEquals(test.width, 200);
+		assertEquals(200, ScoreMenu.width);
 	}
 	
 	@Test
 	public void checkTextColor() {
-		ScoreMenu test = new ScoreMenu();
-		assertEquals(test.text, Color.BLACK);
+		assertEquals(Color.BLACK, ScoreMenu.text);
 	}
 }

@@ -1,3 +1,5 @@
+// Jessi Trieu
+
 package logic;
 
 import javafx.event.ActionEvent;
@@ -20,7 +22,7 @@ public class ScoreMenu {
 	public static int width = 200;
 	public static Color text = Color.BLACK;
 	
-	public ScoreMenu(){}
+	private ScoreMenu(){}
 	
 	public static Scene score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
