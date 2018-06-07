@@ -16,6 +16,6 @@ public class GameOverTest {
 	@Test
 	public void testInset()
 	{
-		assertEquals(0, GameOver.inset);
+		assertEquals(25, GameOver.inset);
 	}
 }
