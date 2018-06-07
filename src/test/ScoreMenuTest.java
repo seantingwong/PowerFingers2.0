@@ -10,8 +10,8 @@ import logic.ScoreMenu;
 public class ScoreMenuTest {
 	
 	@Test
-	public void checkWidth() {
-		assertEquals(200, ScoreMenu.width);
+	public void checkLoop() {
+		assertEquals(200, ScoreMenu.getScore(200));
 	}
 	
 	@Test

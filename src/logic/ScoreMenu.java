@@ -24,6 +24,18 @@ public class ScoreMenu {
 	
 	private ScoreMenu(){}
 	
+	public static int getScore(int numScores)
+	{
+		int result = 0;
+		
+		for(int i = 0; i < numScores; i++)
+		{
+			result++;
+		}
+		
+		return result;
+	}
+	
 	public static Scene score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		final ArrayList<String> users = new ArrayList<String>();
@@ -90,9 +102,6 @@ public class ScoreMenu {
 					scores[i].setText(i+1 + ".\t" + users.get(i)+ "\t...................................................... " + userScore.get(i) + " wpm");
 					scores[i].setStyle("-fx-font: 15 arial;");
 				}
-				
-				//junit
-				System.out.print("top score button clicked");
 			}
 		});
 		
@@ -103,7 +112,7 @@ public class ScoreMenu {
 				prsn.setStyle("-fx-background-color: transparent");
 				top.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Your Scores");
-				for (int i = 0; i < 10; i++) {
+				for (int i = 0; i < getScore(10); i++) {
 					if (i < 3) 
 						scores[i].setText(i+1 + ".\t" + "CoolUser"+ "\t...................................................... " + (55-i) + "wpm");
 					else

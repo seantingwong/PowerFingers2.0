@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
+	public static int constraint = 150;
+	public static String style = "-fx-font: 24 arial;";
 	
 	private SettingsPage(){}
 	
@@ -27,7 +29,7 @@ public class SettingsPage {
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
-		grid.getColumnConstraints().add(new ColumnConstraints(150));
+		grid.getColumnConstraints().add(new ColumnConstraints(constraint));
 		
 		Text title = new Text("Settings");
 		GridPane.setValignment(title, VPos.CENTER);

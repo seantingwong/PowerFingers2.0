@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class LoginPage {
+	public static String user = "Username";
+	public static String pass = "Password";
 	
 	private LoginPage(){}
 	
@@ -42,9 +44,9 @@ public class LoginPage {
 		grid.add(back, 0, 0);
 		grid.add(title, 3, 0);
 		
-		Text username = new Text("Username");
+		Text username = new Text(user);
 		GridPane.setHalignment(username, HPos.RIGHT);
-		Text password = new Text("Password");
+		Text password = new Text(pass);
 		GridPane.setHalignment(password, HPos.RIGHT);
 		TextField usernameField = new TextField();
 		TextField passwordField = new TextField();

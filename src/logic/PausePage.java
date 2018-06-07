@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PausePage {
+	public static String backcol = "-fx-background-color: transparent;";
 
 	private PausePage(){}
 	
@@ -20,7 +21,7 @@ public class PausePage {
 		
 		GridPane grid = new GridPane();
 		
-		grid.setStyle("-fx-background-color: transparent;");
+		grid.setStyle(backcol);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
@@ -46,7 +47,10 @@ public class PausePage {
 				stage.setScene(StartMenu.backToMain(stage));
 			}
 		});
-		grid.add(goHome, 5, 18);
+		if(checkPause(1))
+		{
+			grid.add(goHome, 5, 18);
+		}
 		
 		Button settings = new Button("Settings");
 		settings.setStyle(StartMenu.buttonColor);
@@ -59,5 +63,20 @@ public class PausePage {
 			}
 		});
 		return(scene);
+	}
+	
+	public static boolean checkPause(int status)
+	{
+		boolean result = false;
+		
+		for(int i = 0; i < status; i++)
+		{
+			if(result = false)
+			{
+				result = true;
+			}
+		}
+		
+		return result;
 	}
 }
