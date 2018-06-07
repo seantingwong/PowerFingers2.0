@@ -6,6 +6,6 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ ScoreMenuTest.class })
-public class AllTests {
+public class ScoreMenu {
 
 }
