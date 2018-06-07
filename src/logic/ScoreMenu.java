@@ -17,6 +17,9 @@ import java.util.ArrayList;
 @SuppressWarnings("restriction")
 public class ScoreMenu {
 	
+	public static int width = 200;
+	public static Color text = Color.BLACK;
+	
 	public ScoreMenu(){}
 	
 	public static Scene score(final Stage main, final Scene goBack){
@@ -36,14 +39,14 @@ public class ScoreMenu {
 		users.add("FakeUser"); userScore.add("66");
 		
 		final Button prsn = new Button("Personal");
-		prsn.setTextFill(Color.BLACK);
+		prsn.setTextFill(text);
 		final Button top = new Button("Top");
-		top.setTextFill(Color.BLACK);
+		top.setTextFill(text);
 	
-		prsn.setMaxWidth(200);
-		prsn.setMinWidth(200);
-		top.setMaxWidth(200);
-		top.setMinWidth(200);
+		prsn.setMaxWidth(width);
+		prsn.setMinWidth(width);
+		top.setMaxWidth(width);
+		top.setMinWidth(width);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);

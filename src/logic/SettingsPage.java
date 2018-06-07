@@ -10,7 +10,6 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
@@ -89,21 +88,91 @@ public class SettingsPage {
 			greenButton.setSelected(true);
 		}
 		
+		RadioButton yellowButton = new RadioButton("Yellow");
+		yellowButton.setTextFill(Color.BLACK);
+		yellowButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				StartMenu.backgroundColor = Color.YELLOW;
+				StartMenu.colorSelected = 3;
+			}
+		});
+		yellowButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 3)
+		{
+			yellowButton.setSelected(true);
+		}
+		
+		RadioButton orangeButton = new RadioButton("Orange");
+		orangeButton.setTextFill(Color.BLACK);
+		orangeButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				StartMenu.backgroundColor = Color.ORANGE;
+				StartMenu.colorSelected = 4;
+			}
+		});
+		orangeButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 4)
+		{
+			orangeButton.setSelected(true);
+		}
+		
+		RadioButton tanButton = new RadioButton("Tan");
+		tanButton.setTextFill(Color.BLACK);
+		tanButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				StartMenu.backgroundColor = Color.TAN;
+				StartMenu.colorSelected = 5;
+			}
+		});
+		tanButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 5)
+		{
+			tanButton.setSelected(true);
+		}
+		
+		RadioButton purpleButton = new RadioButton("Purple");
+		purpleButton.setTextFill(Color.BLACK);
+		purpleButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				StartMenu.backgroundColor = Color.MEDIUMPURPLE;
+				StartMenu.colorSelected = 6;
+			}
+		});
+		purpleButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 6)
+		{
+			purpleButton.setSelected(true);
+		}
+		
+		RadioButton greyButton = new RadioButton("Grey");
+		greyButton.setTextFill(Color.BLACK);
+		greyButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				StartMenu.backgroundColor = Color.GREY;
+				StartMenu.colorSelected = 7;
+			}
+		});
+		greyButton.setToggleGroup(group);
+		if(StartMenu.colorSelected == 7)
+		{
+			greyButton.setSelected(true);
+		}
+		
 		grid.add(back, 0, 0);
 		grid.add(title, 11, 0);
 		grid.add(theme, 11, 15);
 		grid.add(blueButton, 11, 16);
 		grid.add(redButton, 11, 17);
 		grid.add(greenButton, 11, 18);
+		grid.add(yellowButton, 11, 19);
+		grid.add(orangeButton, 11, 20);
+		grid.add(tanButton, 11, 21);
+		grid.add(purpleButton, 11, 22);
+		grid.add(greyButton, 11, 23);
 
 		blueButton.setMaxWidth(100);
 		redButton.setMaxWidth(100);
 		greenButton.setMaxWidth(100);
-
-		GridPane.setHalignment(theme, HPos.CENTER);
-		GridPane.setHalignment(blueButton, HPos.CENTER);
-		GridPane.setHalignment(redButton, HPos.CENTER);
-		GridPane.setHalignment(greenButton, HPos.CENTER);
 		
 		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);

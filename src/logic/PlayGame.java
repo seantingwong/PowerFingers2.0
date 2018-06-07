@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -60,11 +62,14 @@ public class PlayGame {
 		
 		log = LoginPage.login(main, goBack);
 		
+		final ImageView pic = new ImageView(new Image("https://ih1.redbubble.net/image.445781365.8284/flat,800x800,075,f.u2.jpg"));
+		
 		grid.add(back, 0, 0);
 		grid.add(title, 4, 0);
-		grid.add(logIn, 4, 28);
-		grid.add(account, 4, 29);
-		grid.add(guest, 4, 30);
+		grid.add(logIn, 4, 25);
+		grid.add(account, 4, 26);
+		grid.add(guest, 4, 27);
+		grid.add(pic, 4, 30);
 
 		logIn.setMaxWidth(150);
 		account.setMaxWidth(150);
