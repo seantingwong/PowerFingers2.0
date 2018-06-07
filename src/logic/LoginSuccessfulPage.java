@@ -62,7 +62,7 @@ public class LoginSuccessfulPage {
 		GridPane.setHalignment(play, HPos.CENTER);
 		GridPane.setHalignment(logout, HPos.CENTER);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(PlayingGame.Game(stage, scene));
