@@ -10,7 +10,7 @@ public class PauseTest {
 	@Test
 	public void testLoops()
 	{
-		assertEquals(false, PausePage.checkPause(1));
+		assertEquals(true, PausePage.checkPause(1));
 	}
 	
 	@Test

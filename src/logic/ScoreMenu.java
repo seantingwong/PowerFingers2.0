@@ -19,8 +19,8 @@ import java.util.ArrayList;
 @SuppressWarnings("restriction")
 public class ScoreMenu {
 	
-	public static int width = 200;
-	public static Color text = Color.BLACK;
+	final public static int width = 200;
+	final public static Color text = Color.BLACK;
 	
 	private ScoreMenu(){}
 	

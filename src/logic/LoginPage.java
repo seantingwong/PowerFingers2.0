@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class LoginPage {
-	public static String user = "Username";
-	public static String pass = "Password";
+	final public static String user = "Username";
+	final public static String pass = "Password";
 	
 	private LoginPage(){}
 	

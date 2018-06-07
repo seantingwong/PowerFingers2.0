@@ -16,8 +16,8 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class GameOver {
 	
-	public static int col = 0;
-	public static int inset = 25;
+	final public static int col = 0;
+	final public static int inset = 25;
 	
 	private GameOver(){}
 	

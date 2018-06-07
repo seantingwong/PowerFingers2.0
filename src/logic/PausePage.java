@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PausePage {
-	public static String backcol = "-fx-background-color: transparent;";
+	final public static String backcol = "-fx-background-color: transparent;";
 
 	private PausePage(){}
 	
@@ -71,7 +71,7 @@ public class PausePage {
 		
 		for(int i = 0; i < status; i++)
 		{
-			if(result = false)
+			if(result == false)
 			{
 				result = true;
 			}

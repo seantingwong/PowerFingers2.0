@@ -9,9 +9,9 @@ import logic.StartMenu;
 @SuppressWarnings("restriction")
 public class StartMenuTest {
 	@Test
-	public void checkBackGround()
+	public void checkWidth()
 	{
-		assertEquals(Color.LIGHTSKYBLUE, StartMenu.backgroundColor);
+		assertEquals(500, StartMenu.width);
 	}
 	
 	@Test

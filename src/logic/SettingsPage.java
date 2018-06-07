@@ -17,8 +17,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
-	public static int constraint = 150;
-	public static String style = "-fx-font: 24 arial;";
+	final public static int constraint = 150;
+	final public static String style = "-fx-font: 24 arial;";
 	
 	private SettingsPage(){}
 	
