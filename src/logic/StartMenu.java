@@ -26,7 +26,7 @@ public class StartMenu extends Application{
 
 	static Scene settingsPage;
 	static Scene playGame;
-	public static int colorSelected = 0;
+	static int colorSelected = 0;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
