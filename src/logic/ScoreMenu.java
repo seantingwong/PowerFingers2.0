@@ -137,11 +137,11 @@ public class ScoreMenu {
 		return result;
 	}
 	
-	public static int getNames(int numScores)
+	public static int getNames(int numNames)
 	{
 		int result = 0;
 		
-		for(int i = 0; i < numScores; i++)
+		for(int i = numNames; i > 0 ; i--)
 		{
 			result++;
 		}

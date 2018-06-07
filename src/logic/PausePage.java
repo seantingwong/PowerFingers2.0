@@ -84,7 +84,7 @@ public class PausePage {
 	{
 		boolean result = false;
 		
-		for(int i = 0; i < status; i++)
+		for(int i = status; i > 0; i--)
 		{
 			if(!result)
 			{
