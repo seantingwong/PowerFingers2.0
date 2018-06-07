@@ -38,7 +38,6 @@ public class ScoreMenu {
 		
 		final Button prsn = new Button("Personal");
 		final Button top = new Button("Top");
-		float scoreNum = 10;
 	
 		prsn.setMaxWidth(200);
 		prsn.setMinWidth(200);
@@ -51,7 +50,6 @@ public class ScoreMenu {
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(70));
 		
-		//Page Title
 		Text title = new Text("High Scores");
 		GridPane.setValignment(title, VPos.CENTER);
 		GridPane.setHalignment(title, HPos.CENTER);
@@ -59,17 +57,14 @@ public class ScoreMenu {
 	    title.maxWidth(100);
 	    title.minWidth(100);
 	    
-	    //High Scores
 	    Text subtitle = new Text("Top Scores");
 	    subtitle.setStyle("-fx-font: 20 arial;");
 	    
-	    //top scores
 	    Text scores[] = new Text[10]; 
 	    for (int i = 0; i < 10; i++) {
 	    	scores[i] = new Text(" ");
 	    }
 		
-	    //Back Button
 		Button back = new Button("Back");
 		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
@@ -78,8 +73,6 @@ public class ScoreMenu {
 			}
 		});
 		
-
-		//Toggle Scores Button
 		top.setStyle(StartMenu.buttonColor);
 		top.setStyle("-fx-font-weight: bold;");
 		top.setOnAction(new EventHandler<ActionEvent>() {
@@ -87,7 +80,6 @@ public class ScoreMenu {
 				top.setStyle("-fx-background-color: transparent;");
 				prsn.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Top Scores");
-				//set top
 				for (int i = 0; i < 10; i++) {
 					scores[i].setText(i+1 + ".\t" + users.get(i)+ "\t...................................................... " + userScore.get(i) + " wpm");
 					scores[i].setStyle("-fx-font: 15 arial;");
@@ -95,7 +87,6 @@ public class ScoreMenu {
 			}
 		});
 		
-		//Personal Scores Button
 		prsn.setStyle("-fx-font-weight: bold;");
 		prsn.setStyle(StartMenu.buttonColor);
 		prsn.setOnAction(new EventHandler<ActionEvent>() {
@@ -103,7 +94,6 @@ public class ScoreMenu {
 				prsn.setStyle("-fx-background-color: transparent");
 				top.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Your Scores");
-				//personal scores
 				for (int i = 0; i < 10; i++) {
 					if (i < 3) 
 						scores[i].setText(i+1 + ".\t" + "CoolUser"+ "\t...................................................... " + (55-i) + "wpm");
