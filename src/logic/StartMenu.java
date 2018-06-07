@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	// macros
-	static int HEIGHT = 600;
+	public static final int HEIGHT = 600;
 	public static final int WIDTH = 500;
 	public static final String BUTTONCOLOR = "-fx-background-color: LightGrey;";
 	public static Color backgroundColor = Color.LIGHTSKYBLUE;

@@ -71,7 +71,7 @@ public class PausePage {
 		
 		for(int i = 0; i < status; i++)
 		{
-			if(result == false)
+			if(!result)
 			{
 				result = true;
 			}
