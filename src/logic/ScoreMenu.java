@@ -12,6 +12,9 @@ import javafx.geometry.VPos;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
+import javafx.scene.control.ListView;
+import java.util.ArrayList;
+import javafx.scene.control.TextField;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
@@ -19,8 +22,22 @@ public class ScoreMenu {
 	
 	public ScoreMenu(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
+		ArrayList<String> users = new ArrayList();
+		ArrayList<String> userScore = new ArrayList();
+		users.add("user1"); userScore.add("120");
+		users.add("FireUser"); userScore.add("119");
+		users.add("user1"); userScore.add("115");
+		users.add("user1"); userScore.add("99");
+		users.add("user1"); userScore.add("98");
+		users.add("FireUser"); userScore.add("78");
+		users.add("Guest"); userScore.add("72");
+		users.add("Falessi"); userScore.add("72");
+		users.add("Guest"); userScore.add("68");
+		users.add("FakeUser"); userScore.add("66");
+		
 		final Button prsn = new Button("Personal");
 		final Button top = new Button("Top");
+		float scoreNum = 10;
 	
 		prsn.setMaxWidth(200);
 		prsn.setMinWidth(200);
@@ -45,6 +62,11 @@ public class ScoreMenu {
 	    Text subtitle = new Text("Top Scores");
 	    subtitle.setStyle("-fx-font: 20 arial;");
 	    
+	    //top scores
+	    Text scores[] = new Text[10]; 
+	    for (int i = 0; i < 10; i++) {
+	    	scores[i] = new Text(" ");
+	    }
 		
 	    //Back Button
 		Button back = new Button("Back");
@@ -62,6 +84,11 @@ public class ScoreMenu {
 				top.setStyle("-fx-background-color: transparent; -fx-font-weight: bold;");
 				prsn.setStyle("-fx-background-color: LightGrey; -fx-font-weight: bold;");
 				subtitle.setText("Top Scores");
+				//set top
+				for (int i = 0; i < 10; i++) {
+					scores[i].setText(i+1 + ".\t" + users.get(i)+ "\t...................................................... " + userScore.get(i) + " wpm");
+					scores[i].setStyle("-fx-font: 15 arial;");
+				}
 			}
 		});
 		
@@ -72,6 +99,14 @@ public class ScoreMenu {
 				prsn.setStyle("-fx-background-color: transparent;-fx-font-weight: bold;");
 				top.setStyle("-fx-background-color: LightGrey;-fx-font-weight: bold;");
 				subtitle.setText("Your Scores");
+				//personal scores
+				for (int i = 0; i < 10; i++) {
+					if (i < 3) 
+						scores[i].setText(i+1 + ".\t" + "CoolUser"+ "\t...................................................... " + (55-i) + "wpm");
+					else
+						scores[i].setText(" ");
+					scores[i].setStyle("-fx-font: 15 arial;");
+				}
 			}
 		});
 		
@@ -80,6 +115,11 @@ public class ScoreMenu {
 		grid.add(top, 1, 10, 2, 1);
 		grid.add(prsn, 3, 10, 1, 1);
 		grid.add(subtitle, 1, 12);
+		
+		for (int i = 0; i < 10; i++) {
+			grid.add(scores[i], 1, 14+i*2, 5, 1);
+		}
+		top.fire();
 		
 		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
 	}
