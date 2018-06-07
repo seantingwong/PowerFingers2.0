@@ -12,9 +12,7 @@ import javafx.geometry.VPos;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
-import javafx.scene.control.ListView;
 import java.util.ArrayList;
-import javafx.scene.control.TextField;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
@@ -23,8 +21,8 @@ public class ScoreMenu {
 	
 	public static Scene score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
-		ArrayList<String> users = new ArrayList();
-		ArrayList<String> userScore = new ArrayList();
+		final ArrayList<String> users = new ArrayList<String>();
+		final ArrayList<String> userScore = new ArrayList<String>();
 		users.add("user1"); userScore.add("120");
 		users.add("FireUser"); userScore.add("119");
 		users.add("user1"); userScore.add("115");
@@ -57,10 +55,10 @@ public class ScoreMenu {
 	    title.maxWidth(100);
 	    title.minWidth(100);
 	    
-	    Text subtitle = new Text("Top Scores");
+	    final Text subtitle = new Text("Top Scores");
 	    subtitle.setStyle("-fx-font: 20 arial;");
 	    
-	    Text scores[] = new Text[10]; 
+	    final Text scores[] = new Text[10]; 
 	    for (int i = 0; i < 10; i++) {
 	    	scores[i] = new Text(" ");
 	    }
