@@ -15,14 +15,16 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayGame {
-	public Scene scene;
 	
-	Scene log;
-	Scene newAcc;
-	Scene guestAcc;
+	static Scene log;
+	static Scene newAcc;
+	static Scene guestAcc;
 	
-	public PlayGame(final Stage main, final Scene goBack){
+	private PlayGame(){}
+	
+	public static Scene Play(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
+		Scene scene;
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
@@ -51,17 +53,13 @@ public class PlayGame {
 		guest.setStyle(StartMenu.buttonColor);
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				//main.setScene(guestAcc);
-				PlayingGame playingGame = new PlayingGame(main, StartMenu.playGame);
-				main.setScene(playingGame.scene);
+				main.setScene(PlayingGame.Game(main, goBack));
 			}
 		});
 		
-		CreateAccount newCreate = new CreateAccount(main, scene);
-		newAcc = newCreate.scene;
+		newAcc = CreateAccount.Account(main, goBack);
 		
-		LoginPage newLog = new LoginPage(main, scene);
-		log = newLog.scene;
+		log = LoginPage.Login(main, goBack);
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 4, 0);
@@ -81,16 +79,16 @@ public class PlayGame {
 		
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				LoginPage loginPage = new LoginPage(main, scene);
-				main.setScene(loginPage.scene);
+				main.setScene(LoginPage.Login(main, goBack));
 			}
 		});
 		
 		account.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				CreateAccount createAccount = new CreateAccount(main, scene);
-				main.setScene(createAccount.scene);			
+				main.setScene(CreateAccount.Account(main, goBack));			
 			}
 		});
+		
+		return(scene);
 	}
 }

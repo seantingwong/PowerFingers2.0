@@ -10,16 +10,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
 import javafx.geometry.HPos;
 import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class CreateAccount {
 	
-	public Scene scene;
+	private CreateAccount(){}
 	
-	public CreateAccount(final Stage main, final Scene goBack) {
+	public static Scene Account(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -65,15 +64,14 @@ public class CreateAccount {
 		Button createAccount = new Button("Create Account");
 		createAccount.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(main, scene);
-				main.setScene(loginSuc.scene);
+				main.setScene(LoginSuccessfulPage.LoginSuccessful(main));
 			}
 		});
-//		grid.add(createAccount, 5, 23);
 		GridPane.setHalignment(createAccount, HPos.CENTER);
 		createAccount.setMaxWidth(150);
 		grid.add(createAccount, 1, 19);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

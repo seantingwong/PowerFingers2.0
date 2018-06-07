@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class LoginPage {
 	
-	public Scene scene;
+	private LoginPage(){}
 	
-	public LoginPage(final Stage stage, final Scene goBack) {
+	public static Scene Login(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -61,13 +61,13 @@ public class LoginPage {
 		login.setMaxWidth(100);
 		login.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(stage, scene);
-				stage.setScene(loginSuc.scene);
+				stage.setScene(LoginSuccessfulPage.LoginSuccessful(stage));
 			}
 		});	
 
 		grid.add(login, 3, 17);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

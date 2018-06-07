@@ -14,9 +14,10 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PausePage {
-	public Scene scene;
+
+	private PausePage(){}
 	
-	public PausePage(final Stage stage, final Scene goBack) {
+	public static Scene Pause(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -50,12 +51,12 @@ public class PausePage {
 		Button settings = new Button("Settings");
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				SettingsPage settingsPage = new SettingsPage(stage, scene);
-				stage.setScene(settingsPage.scene);
+				stage.setScene(SettingsPage.Settings(stage, goBack));
 			}
 		});
 		grid.add(settings, 5, 21);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

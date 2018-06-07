@@ -31,7 +31,8 @@ public class StartMenu extends Application{
 	Scene helpMenu;
 	static Scene settingsPage;
 	static Scene playGame;
-	static Scene scene;
+	public static Scene scene;
+	public static int colorSelected = 0;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
@@ -53,8 +54,7 @@ public class StartMenu extends Application{
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				PlayGame newGame = new PlayGame(stage, scene);
-				stage.setScene(newGame.scene);
+				stage.setScene(PlayGame.Play(stage, scene));
 			}
 		});
 		
@@ -62,8 +62,7 @@ public class StartMenu extends Application{
 		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				ScoreMenu newScore = new ScoreMenu(stage, scene);
-				stage.setScene(newScore.scene);
+				stage.setScene(ScoreMenu.Score(stage, scene));
 			}
 		});
 		
@@ -71,8 +70,7 @@ public class StartMenu extends Application{
 		settings.setStyle(buttonColor);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				SettingsPage newSettingsPage = new SettingsPage(stage, scene);
-				stage.setScene(newSettingsPage.scene);
+				stage.setScene(SettingsPage.Settings(stage, scene));
 			}
 		});
 		
@@ -80,31 +78,9 @@ public class StartMenu extends Application{
 		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				HelpMenu newHelp = new HelpMenu(stage, scene);
-				stage.setScene(newHelp.scene);
+				stage.setScene(HelpMenu.Help(stage, scene));
 			}
 		});
-		
-//		test = new Button("Test");
-//		test.setStyle("-fx-background-color: LightGrey;");
-//		test.setOnAction(new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent event) {
-////				LoginPage loginPage = new LoginPage(stage, scene);
-////				stage.setScene(loginPage.scene);
-//				
-////				CreateAccount createAccount = new CreateAccount(stage, scene);
-////				stage.setScene(createAccount.scene);
-//			
-////				PausePage pausePage = new PausePage(stage, scene);
-////				stage.setScene(pausePage.scene);
-//			
-////				GameOver gameOver = new GameOver(stage, scene);
-////				stage.setScene(gameOver.scene);
-//				
-//				LoginSuccessfulPage loginSucc = new LoginSuccessfulPage(stage, scene);
-//				stage.setScene(loginSucc.scene);
-//			}
-//		});
 		
 		title.maxWidth(100);
 		play.setMaxWidth(100);
@@ -123,7 +99,6 @@ public class StartMenu extends Application{
 		grid.add(scores, 0, 2);
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
-//		grid.add(test, 0, 5);
 
 		stage.setScene(scene);
 		stage.show();

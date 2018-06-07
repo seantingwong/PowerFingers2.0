@@ -15,9 +15,10 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class HelpMenu {
-	public Scene scene;
 	
-	public HelpMenu(final Stage main, final Scene goBack){
+	private HelpMenu(){}
+	
+	public static Scene Help(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -25,9 +26,6 @@ public class HelpMenu {
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
-		
-		Text title = new Text("Help");
-	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
 		back.setStyle("-fx-background-color: LightGrey;");
@@ -37,12 +35,15 @@ public class HelpMenu {
 			}
 		});
 		
+		Text title = new Text("Help");
+	    title.setStyle("-fx-font: 36 arial;");
+		
 		final ImageView guide = new ImageView(new Image("http://oakdome.com/k5/lesson-plans/word/images/proper-finger-placement-for-keyboarding-550.gif"));
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 18, 0);
 		grid.add(guide, 0, 3);
-		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

@@ -18,9 +18,10 @@ import javafx.scene.control.TextField;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
-	public Scene scene;
 	
-	public ScoreMenu(final Stage main, final Scene goBack){
+	private ScoreMenu(){}
+	
+	public static Scene Score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		ArrayList<String> users = new ArrayList();
 		ArrayList<String> userScore = new ArrayList();
@@ -70,19 +71,21 @@ public class ScoreMenu {
 		
 	    //Back Button
 		Button back = new Button("Back");
-		back.setStyle("-fx-background-color: LightGrey;");
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
 			}
 		});
 		
-		//Toggle Top Scores Button
-		top.setStyle("-fx-background-color: transparent; -fx-font-weight: bold;");
+
+		//Toggle Scores Button
+		top.setStyle(StartMenu.buttonColor);
+		top.setStyle("-fx-font-weight: bold;");
 		top.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				top.setStyle("-fx-background-color: transparent; -fx-font-weight: bold;");
-				prsn.setStyle("-fx-background-color: LightGrey; -fx-font-weight: bold;");
+				top.setStyle("-fx-background-color: transparent;");
+				prsn.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Top Scores");
 				//set top
 				for (int i = 0; i < 10; i++) {
@@ -93,11 +96,12 @@ public class ScoreMenu {
 		});
 		
 		//Personal Scores Button
-		prsn.setStyle("-fx-background-color: LightGrey;-fx-font-weight: bold;");
+		prsn.setStyle("-fx-font-weight: bold;");
+		prsn.setStyle(StartMenu.buttonColor);
 		prsn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				prsn.setStyle("-fx-background-color: transparent;-fx-font-weight: bold;");
-				top.setStyle("-fx-background-color: LightGrey;-fx-font-weight: bold;");
+				prsn.setStyle("-fx-background-color: transparent");
+				top.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Your Scores");
 				//personal scores
 				for (int i = 0; i < 10; i++) {
@@ -121,6 +125,7 @@ public class ScoreMenu {
 		}
 		top.fire();
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

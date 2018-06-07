@@ -1,30 +1,24 @@
 package logic;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
+@SuppressWarnings("restriction")
 public class LoginSuccessfulPage {
+	
+	private LoginSuccessfulPage(){}
 
-	String buttonColor = "-fx-background-color: LightGrey;";
-	public Scene scene;
-
-	@SuppressWarnings("restriction")
-	public LoginSuccessfulPage(Stage stage, Scene goBack) {
+	public static Scene LoginSuccessful(final Stage stage) {
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -38,7 +32,7 @@ public class LoginSuccessfulPage {
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(buttonColor);
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.scene);
@@ -46,7 +40,7 @@ public class LoginSuccessfulPage {
 		});
 		
 		Button logout = new Button("Logout");
-		logout.setStyle(buttonColor);
+		logout.setStyle(StartMenu.buttonColor);
 		logout.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.playGame);
@@ -54,13 +48,7 @@ public class LoginSuccessfulPage {
 		});
 		
 		Button play = new Button("Play");
-		play.setStyle(buttonColor);
-		play.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				PlayingGame playingGame = new PlayingGame(stage, scene);
-				stage.setScene(playingGame.scene);
-			}
-		});
+		play.setStyle(StartMenu.buttonColor);
 	
 		
 		grid.add(back, 0, 0);
@@ -74,7 +62,13 @@ public class LoginSuccessfulPage {
 		GridPane.setHalignment(play, HPos.CENTER);
 		GridPane.setHalignment(logout, HPos.CENTER);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		play.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				stage.setScene(PlayingGame.Game(stage, scene));
+			}
+		});
+		return(scene);
 	}
 
 }
