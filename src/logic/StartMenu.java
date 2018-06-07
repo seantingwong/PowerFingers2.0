@@ -38,10 +38,10 @@ public class StartMenu extends Application{
 		stage.show();
 	}
 	
-	public static Scene backToMain(Stage stage)
+	public static Scene backToMain(final Stage stage)
 	{
 		GridPane grid = new GridPane();
-		Scene scene = new Scene(grid, height, width, backgroundMain);
+		final Scene scene = new Scene(grid, height, width, backgroundMain);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
