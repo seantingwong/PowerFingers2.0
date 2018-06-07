@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 @SuppressWarnings("restriction")
 public class ScoreMenu {
 	
-	private ScoreMenu(){}
+	public ScoreMenu(){}
 	
 	public static Scene Score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
@@ -92,6 +92,9 @@ public class ScoreMenu {
 					scores[i].setText(i+1 + ".\t" + users.get(i)+ "\t...................................................... " + userScore.get(i) + " wpm");
 					scores[i].setStyle("-fx-font: 15 arial;");
 				}
+				
+				//junit
+				System.out.print("top score button clicked");
 			}
 		});
 		
