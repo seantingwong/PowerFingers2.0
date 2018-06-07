@@ -19,5 +19,4 @@ public class ScoreMenuTest {
 		ScoreMenu test = new ScoreMenu();
 		assertEquals(test.text, Color.BLACK);
 	}
-
 }

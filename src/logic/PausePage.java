@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -33,15 +31,16 @@ public class PausePage {
 		grid.add(title, 5, 0);
 
 	    Button back = new Button("Resume");
-		back.setStyle("-fx-background-color: LightGrey;");
+		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(goBack);
+				stage.setScene(PlayingGame.game(stage, goBack));
 			}
 		});
 		grid.add(back, 5, 15);
 
 		Button goHome = new Button("Go Home");
+		goHome.setStyle(StartMenu.buttonColor);
 		goHome.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.backToMain(stage));
@@ -50,10 +49,8 @@ public class PausePage {
 		grid.add(goHome, 5, 18);
 		
 		Button settings = new Button("Settings");
+		settings.setStyle(StartMenu.buttonColor);
 		grid.add(settings, 5, 21);		
-		
-		final ImageView pic = new ImageView(new Image("https://pbs.twimg.com/media/Ddppa5wVQAA_PoI.jpg:large"));
-		grid.add(pic, 5, 25);
 		
 		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		settings.setOnAction(new EventHandler<ActionEvent>() {

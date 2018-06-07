@@ -31,9 +31,12 @@ public class GameOver {
 		
 		Text title = new Text("Game Over");
 	    title.setStyle("-fx-font: 36 arial;");
-		
+
 		Text score = new Text("You scored 72 words/minute!");
 		grid.add(score, 0,  8);
+		
+		Text accuracy = new Text("Your accuracy is 100%");
+		grid.add(accuracy, 0,  9);
 
 		Button goHome = new Button("Go Home");
 		goHome.setOnAction(new EventHandler<ActionEvent>() {
