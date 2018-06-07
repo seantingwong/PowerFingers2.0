@@ -53,30 +53,24 @@ public class StartMenu extends Application{
 		play = new Button("Play");
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
-				PlayGame newGame = new PlayGame(stage, scene);
-				stage.setScene(newGame.scene);
+				stage.setScene(PlayGame.Play(stage, scene));
 			}
 		});
 		
 		scores = new Button("Scores");
 		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
-				ScoreMenu newScore = new ScoreMenu(stage, scene);
-				stage.setScene(newScore.scene);
+				stage.setScene(ScoreMenu.Score(stage, scene));
 			}
 		});
 		
 		settings = new Button("Settings");
 		settings.setStyle(buttonColor);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
-				SettingsPage newSettingsPage = new SettingsPage(stage, scene);
-				stage.setScene(newSettingsPage.scene);
+				stage.setScene(SettingsPage.Settings(stage, scene));
 			}
 		});
 		

@@ -18,9 +18,10 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
-	static public Scene scene;
 	
-	public SettingsPage(final Stage main, final Scene goBack){
+	private SettingsPage(){}
+	
+	public static Scene Settings(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -104,7 +105,8 @@ public class SettingsPage {
 		GridPane.setHalignment(redButton, HPos.CENTER);
 		GridPane.setHalignment(greenButton, HPos.CENTER);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 	
 	

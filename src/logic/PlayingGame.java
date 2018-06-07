@@ -15,9 +15,10 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PlayingGame {
-	public static Scene scene;
 	
-	public PlayingGame(final Stage stage, final Scene goBack) {
+	private PlayingGame(){}
+	
+	public static Scene Game(final Stage stage, final Scene goBack) {
 
 		GridPane grid = new GridPane();
 		
@@ -34,13 +35,6 @@ public class PlayingGame {
 	    
 	    Button pause = new Button("Pause");
 		pause.setStyle("-fx-background-color: LightGrey;");
-		pause.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
-			public void handle(ActionEvent event) {
-				PausePage pausePage = new PausePage(stage, scene);
-				stage.setScene(pausePage.scene);
-			}
-		});
 
 		Button endGame = new Button("End Game");
 		endGame.setStyle("-fx-background-color: LightGrey;");
@@ -57,7 +51,15 @@ public class PlayingGame {
 		grid.add(typeField, 2, 5);
 		grid.add(title, 2, 0);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundColor);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundColor);
+		
+		pause.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				stage.setScene(PausePage.Pause(stage, goBack));
+			}
+		});
+		
+		return(scene);
 
 	}
 

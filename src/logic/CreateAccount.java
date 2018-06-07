@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class CreateAccount {
 	
-	public static Scene scene;
+	private CreateAccount(){}
 	
-	public CreateAccount(final Stage main, final Scene goBack) {
+	public static Scene Account(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -63,16 +63,15 @@ public class CreateAccount {
 		
 		Button createAccount = new Button("Create Account");
 		createAccount.setOnAction(new EventHandler<ActionEvent>() {
-			@SuppressWarnings("static-access")
 			public void handle(ActionEvent event) {
-				LoginSuccessfulPage loginSuc = new LoginSuccessfulPage(main);
-				main.setScene(loginSuc.scene);
+				main.setScene(LoginSuccessfulPage.LoginSuccessful(main));
 			}
 		});
 		GridPane.setHalignment(createAccount, HPos.CENTER);
 		createAccount.setMaxWidth(150);
 		grid.add(createAccount, 1, 19);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }

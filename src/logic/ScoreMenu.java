@@ -15,9 +15,10 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
-	public static Scene scene;
 	
-	public ScoreMenu(final Stage main, final Scene goBack){
+	private ScoreMenu(){}
+	
+	public static Scene Score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		final Button prsn = new Button("Personal");
 		final Button top = new Button("Top");
@@ -66,6 +67,7 @@ public class ScoreMenu {
 		grid.add(top, 28, 20);
 		grid.add(prsn, 29, 20);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		return(scene);
 	}
 }
