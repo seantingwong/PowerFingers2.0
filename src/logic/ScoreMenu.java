@@ -21,20 +21,8 @@ public class ScoreMenu {
 	
 	public static final  int WIDTH = 200;
 	public static final Color TEXT = Color.BLACK;
-	
+
 	private ScoreMenu(){}
-	
-	public static int getScore(int numScores)
-	{
-		int result = 0;
-		
-		for(int i = 0; i < numScores; i++)
-		{
-			result++;
-		}
-		
-		return result;
-	}
 	
 	public static Scene score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
@@ -135,5 +123,29 @@ public class ScoreMenu {
 		
 		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
+	}
+	
+	public static int getScore(int numScores)
+	{
+		int result = 0;
+		
+		for(int i = 0; i < numScores; i++)
+		{
+			result++;
+		}
+		
+		return result;
+	}
+	
+	public static int getNames(int numScores)
+	{
+		int result = 0;
+		
+		for(int i = 0; i < numScores; i++)
+		{
+			result++;
+		}
+		
+		return result;
 	}
 }

@@ -64,8 +64,23 @@ public class PausePage {
 		});
 		return(scene);
 	}
-	
+
 	public static boolean checkPause(int status)
+	{
+		boolean result = false;
+		
+		for(int i = 0; i < status; i++)
+		{
+			if(!result)
+			{
+				result = true;
+			}
+		}
+		
+		return result;
+	}
+	
+	public static boolean checkPlay(int status)
 	{
 		boolean result = false;
 		
