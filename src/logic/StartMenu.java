@@ -19,12 +19,12 @@ public class StartMenu extends Application{
 	// macros
 	static int height = 600;
 	static int width = 500;
-	static String buttonColor = "-fx-background-color: LightGrey;";
-	static Color backgroundColor = Color.LIGHTSKYBLUE;
+	public static String buttonColor = "-fx-background-color: LightGrey;";
+	public static Color backgroundColor = Color.LIGHTSKYBLUE;
 	static Color backgroundMain = Color.WHITE;
 	static Scene settingsPage;
 	static Scene playGame;
-	static int colorSelected = 0;
+	public static int colorSelected = 0;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
