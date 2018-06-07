@@ -10,12 +10,14 @@ public class LoginTest {
 	@Test
 	public void testUser()
 	{
-		assertEquals("Username", LoginPage.user);
+		String output = LoginPage.USER;
+		assertEquals("Username", output);
 	}
 	
 	@Test
 	public void testPass()
 	{
-		assertEquals("Password", LoginPage.pass);
+		String output = LoginPage.PASS;
+		assertEquals("Password", output);
 	}
 }

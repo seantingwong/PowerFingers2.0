@@ -17,8 +17,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class SettingsPage {
-	final public static int constraint = 150;
-	final public static String style = "-fx-font: 24 arial;";
+	public static final int CONSTRAINT = 150;
+	public static final String STYLE = "-fx-font: 24 arial;";
 	
 	private SettingsPage(){}
 	
@@ -29,7 +29,7 @@ public class SettingsPage {
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
-		grid.getColumnConstraints().add(new ColumnConstraints(constraint));
+		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Settings");
 		GridPane.setValignment(title, VPos.CENTER);
@@ -37,10 +37,10 @@ public class SettingsPage {
 	    
 		Text theme = new Text("Theme");
 		GridPane.setValignment(theme, VPos.CENTER);
-	    theme.setStyle("-fx-font: 24 arial;");
+	    theme.setStyle(STYLE);
 		
 		Button back = new Button("Back");
-		back.setStyle(StartMenu.buttonColor);
+		back.setStyle(StartMenu.BUTTONCOLOR);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -176,7 +176,7 @@ public class SettingsPage {
 		redButton.setMaxWidth(100);
 		greenButton.setMaxWidth(100);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
 	}
 	

@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class LoginPage {
-	final public static String user = "Username";
-	final public static String pass = "Password";
+	public static final String USER = "Username";
+	public static final String PASS = "Password";
 	
 	private LoginPage(){}
 	
@@ -44,9 +44,9 @@ public class LoginPage {
 		grid.add(back, 0, 0);
 		grid.add(title, 3, 0);
 		
-		Text username = new Text(user);
+		Text username = new Text(USER);
 		GridPane.setHalignment(username, HPos.RIGHT);
-		Text password = new Text(pass);
+		Text password = new Text(PASS);
 		GridPane.setHalignment(password, HPos.RIGHT);
 		TextField usernameField = new TextField();
 		TextField passwordField = new TextField();
@@ -68,7 +68,7 @@ public class LoginPage {
 
 		grid.add(login, 3, 17);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

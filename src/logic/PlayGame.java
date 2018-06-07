@@ -37,7 +37,7 @@ public class PlayGame {
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(StartMenu.buttonColor);
+		back.setStyle(StartMenu.BUTTONCOLOR);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
@@ -45,13 +45,13 @@ public class PlayGame {
 		});
 		
 		Button logIn = new Button("Log In");
-		logIn.setStyle(StartMenu.buttonColor);
+		logIn.setStyle(StartMenu.BUTTONCOLOR);
 		
 		Button account = new Button("Create Account");
-		account.setStyle(StartMenu.buttonColor);
+		account.setStyle(StartMenu.BUTTONCOLOR);
 		
 		Button guest = new Button("Play As Guest");
-		guest.setStyle(StartMenu.buttonColor);
+		guest.setStyle(StartMenu.BUTTONCOLOR);
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(PlayingGame.game(main, goBack));
@@ -79,7 +79,7 @@ public class PlayGame {
 		GridPane.setHalignment(account, HPos.CENTER);
 		GridPane.setHalignment(guest, HPos.CENTER);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {

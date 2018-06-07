@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class PausePage {
-	final public static String backcol = "-fx-background-color: transparent;";
+	public static final String BACKCOL = "-fx-background-color: transparent;";
 
 	private PausePage(){}
 	
@@ -21,7 +21,7 @@ public class PausePage {
 		
 		GridPane grid = new GridPane();
 		
-		grid.setStyle(backcol);
+		grid.setStyle(BACKCOL);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
@@ -32,7 +32,7 @@ public class PausePage {
 		grid.add(title, 5, 0);
 
 	    Button back = new Button("Resume");
-		back.setStyle(StartMenu.buttonColor);
+		back.setStyle(StartMenu.BUTTONCOLOR);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(PlayingGame.game(stage, goBack));
@@ -41,7 +41,7 @@ public class PausePage {
 		grid.add(back, 5, 15);
 
 		Button goHome = new Button("Go Home");
-		goHome.setStyle(StartMenu.buttonColor);
+		goHome.setStyle(StartMenu.BUTTONCOLOR);
 		goHome.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.backToMain(stage));
@@ -53,10 +53,10 @@ public class PausePage {
 		}
 		
 		Button settings = new Button("Settings");
-		settings.setStyle(StartMenu.buttonColor);
+		settings.setStyle(StartMenu.BUTTONCOLOR);
 		grid.add(settings, 5, 21);		
 		
-		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		final Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(SettingsPage.settings(stage, scene));

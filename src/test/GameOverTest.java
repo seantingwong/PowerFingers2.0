@@ -10,12 +10,14 @@ public class GameOverTest {
 	@Test
 	public void testCol()
 	{
-		assertEquals(0, GameOver.col);
+		int output = GameOver.COL;
+		assertEquals(0, output);
 	}
 	
 	@Test
 	public void testInset()
 	{
-		assertEquals(25, GameOver.inset);
+		int output = GameOver.INSET;
+		assertEquals(25, output);
 	}
 }

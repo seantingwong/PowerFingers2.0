@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	// macros
-	static int height = 600;
-	final public static int width = 500;
-	final public static String buttonColor = "-fx-background-color: LightGrey;";
+	static int HEIGHT = 600;
+	public static final int WIDTH = 500;
+	public static final String BUTTONCOLOR = "-fx-background-color: LightGrey;";
 	public static Color backgroundColor = Color.LIGHTSKYBLUE;
 	static Color backgroundMain = Color.WHITE;
 	static Scene settingsPage;
@@ -39,7 +39,7 @@ public class StartMenu extends Application{
 	public static Scene backToMain(final Stage stage)
 	{
 		GridPane grid = new GridPane();
-		final Scene scene = new Scene(grid, height, width, backgroundMain);
+		final Scene scene = new Scene(grid, HEIGHT, WIDTH, backgroundMain);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
@@ -53,7 +53,7 @@ public class StartMenu extends Application{
 	    title.setStyle("-fx-font: 36 arial;");
 	    
 		Button play = new Button("Play");
-		play.setStyle(buttonColor);
+		play.setStyle(BUTTONCOLOR);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(PlayGame.play(stage, scene));
@@ -61,7 +61,7 @@ public class StartMenu extends Application{
 		});
 		
 		Button scores = new Button("Scores");
-		scores.setStyle(buttonColor);
+		scores.setStyle(BUTTONCOLOR);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(ScoreMenu.score(stage, scene));
@@ -69,7 +69,7 @@ public class StartMenu extends Application{
 		});
 		
 		Button settings = new Button("Settings");
-		settings.setStyle(buttonColor);
+		settings.setStyle(BUTTONCOLOR);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(SettingsPage.settings(stage, scene));
@@ -77,7 +77,7 @@ public class StartMenu extends Application{
 		});
 		
 		Button help = new Button("Help");
-		help.setStyle(buttonColor);
+		help.setStyle(BUTTONCOLOR);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(HelpMenu.help(stage, scene));

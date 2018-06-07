@@ -42,7 +42,7 @@ public class HelpMenu {
 		grid.add(back, 0, 0);
 		grid.add(title, 18, 0);
 		grid.add(guide, 0, 3);
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

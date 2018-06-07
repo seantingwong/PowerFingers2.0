@@ -16,8 +16,8 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class GameOver {
 	
-	final public static int col = 0;
-	final public static int inset = 25;
+	public static final int COL = 0;
+	public static final int INSET = 25;
 	
 	private GameOver(){}
 	
@@ -29,14 +29,14 @@ public class GameOver {
 		grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
 		grid.setVgap(5);
-		grid.setPadding(new Insets(inset, inset, inset, inset));
+		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Game Over");
 	    title.setStyle("-fx-font: 36 arial;");
 
 		Text score = new Text("You scored 72 words/minute!");
-		grid.add(score, col,  8);
+		grid.add(score, 0,  8);
 		
 		Text accuracy = new Text("Your accuracy is 100%");
 		grid.add(accuracy, 0,  9);
@@ -54,7 +54,7 @@ public class GameOver {
 		grid.add(title, 0, 0);
 		grid.add(goHome, 0, 18);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

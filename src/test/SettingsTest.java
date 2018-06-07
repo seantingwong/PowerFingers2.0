@@ -9,12 +9,14 @@ public class SettingsTest {
 	@Test
 	public void testConstraint()
 	{
-		assertEquals(150, SettingsPage.constraint);
+		int output = SettingsPage.CONSTRAINT;
+		assertEquals(150, output);
 	}
 	
 	@Test
 	public void testString()
 	{
-		assertEquals("-fx-font: 24 arial;", SettingsPage.style);
+		String output = SettingsPage.STYLE;
+		assertEquals("-fx-font: 24 arial;", output);
 	}
 }

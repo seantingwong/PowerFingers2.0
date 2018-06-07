@@ -16,6 +16,7 @@ public class PauseTest {
 	@Test
 	public void testColor()
 	{
-		assertEquals("-fx-background-color: transparent;", PausePage.backcol);
+		String output = PausePage.BACKCOL;
+		assertEquals("-fx-background-color: transparent;", output);
 	}
 }

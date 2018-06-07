@@ -19,8 +19,8 @@ import java.util.ArrayList;
 @SuppressWarnings("restriction")
 public class ScoreMenu {
 	
-	final public static int width = 200;
-	final public static Color text = Color.BLACK;
+	public static final  int WIDTH = 200;
+	public static final Color TEXT = Color.BLACK;
 	
 	private ScoreMenu(){}
 	
@@ -53,14 +53,14 @@ public class ScoreMenu {
 		users.add("FakeUser"); userScore.add("66");
 		
 		final Button prsn = new Button("Personal");
-		prsn.setTextFill(text);
+		prsn.setTextFill(TEXT);
 		final Button top = new Button("Top");
-		top.setTextFill(text);
+		top.setTextFill(TEXT);
 	
-		prsn.setMaxWidth(width);
-		prsn.setMinWidth(width);
-		top.setMaxWidth(width);
-		top.setMinWidth(width);
+		prsn.setMaxWidth(WIDTH);
+		prsn.setMinWidth(WIDTH);
+		top.setMaxWidth(WIDTH);
+		top.setMinWidth(WIDTH);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
@@ -84,19 +84,19 @@ public class ScoreMenu {
 	    }
 		
 		Button back = new Button("Back");
-		back.setStyle(StartMenu.buttonColor);
+		back.setStyle(StartMenu.BUTTONCOLOR);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				main.setScene(goBack);
 			}
 		});
 		
-		top.setStyle(StartMenu.buttonColor);
+		top.setStyle(StartMenu.BUTTONCOLOR);
 		top.setStyle("-fx-font-weight: bold;");
 		top.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				top.setStyle("-fx-background-color: transparent;");
-				prsn.setStyle(StartMenu.buttonColor);
+				prsn.setStyle(StartMenu.BUTTONCOLOR);
 				subtitle.setText("Top Scores");
 				for (int i = 0; i < 10; i++) {
 					scores[i].setText(i+1 + ".\t" + users.get(i)+ "\t...................................................... " + userScore.get(i) + " wpm");
@@ -106,11 +106,11 @@ public class ScoreMenu {
 		});
 		
 		prsn.setStyle("-fx-font-weight: bold;");
-		prsn.setStyle(StartMenu.buttonColor);
+		prsn.setStyle(StartMenu.BUTTONCOLOR);
 		prsn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				prsn.setStyle("-fx-background-color: transparent");
-				top.setStyle(StartMenu.buttonColor);
+				top.setStyle(StartMenu.BUTTONCOLOR);
 				subtitle.setText("Your Scores");
 				for (int i = 0; i < getScore(10); i++) {
 					if (i < 3) 
@@ -133,7 +133,7 @@ public class ScoreMenu {
 		}
 		top.fire();
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

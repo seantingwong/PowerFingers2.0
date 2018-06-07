@@ -31,7 +31,7 @@ public class LoginSuccessfulPage {
 	    title.setStyle("-fx-font: 36 arial;");
 		
 		Button back = new Button("Back");
-		back.setStyle(StartMenu.buttonColor);
+		back.setStyle(StartMenu.BUTTONCOLOR);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.backToMain(stage));
@@ -39,7 +39,7 @@ public class LoginSuccessfulPage {
 		});
 		
 		Button logout = new Button("Logout");
-		logout.setStyle(StartMenu.buttonColor);
+		logout.setStyle(StartMenu.BUTTONCOLOR);
 		logout.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(StartMenu.playGame);
@@ -47,7 +47,7 @@ public class LoginSuccessfulPage {
 		});
 		
 		Button play = new Button("Play");
-		play.setStyle(StartMenu.buttonColor);
+		play.setStyle(StartMenu.BUTTONCOLOR);
 	
 		
 		grid.add(back, 0, 0);
@@ -61,7 +61,7 @@ public class LoginSuccessfulPage {
 		GridPane.setHalignment(play, HPos.CENTER);
 		GridPane.setHalignment(logout, HPos.CENTER);
 		
-		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		final Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(PlayingGame.game(stage, scene));

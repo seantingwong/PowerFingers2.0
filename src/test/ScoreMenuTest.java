@@ -16,6 +16,7 @@ public class ScoreMenuTest {
 	
 	@Test
 	public void checkTextColor() {
-		assertEquals(Color.BLACK, ScoreMenu.text);
+		Color output = ScoreMenu.TEXT;
+		assertEquals(Color.BLACK, output);
 	}
 }

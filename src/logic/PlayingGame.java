@@ -49,7 +49,7 @@ public class PlayingGame {
 		grid.add(typeField, 2, 5);
 		grid.add(title, 2, 0);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundColor);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundColor);
 		
 		pause.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {

@@ -70,7 +70,7 @@ public class CreateAccount {
 		createAccount.setMaxWidth(150);
 		grid.add(createAccount, 1, 19);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
+		Scene scene = new Scene(grid, StartMenu.HEIGHT, StartMenu.WIDTH, StartMenu.backgroundMain);
 		return(scene);
 	}
 }
