@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
@@ -18,7 +17,7 @@ public class CreateAccount {
 	
 	private CreateAccount(){}
 	
-	public static Scene Account(final Stage main, final Scene goBack) {
+	public static Scene account(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -64,14 +63,14 @@ public class CreateAccount {
 		Button createAccount = new Button("Create Account");
 		createAccount.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(LoginSuccessfulPage.LoginSuccessful(main));
+				main.setScene(LoginSuccessfulPage.loginSuccessful(main));
 			}
 		});
 		GridPane.setHalignment(createAccount, HPos.CENTER);
 		createAccount.setMaxWidth(150);
 		grid.add(createAccount, 1, 19);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

@@ -12,24 +12,23 @@ import javafx.geometry.VPos;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
-import javafx.scene.control.ListView;
 import java.util.ArrayList;
-import javafx.scene.control.TextField;
 
 @SuppressWarnings("restriction")
 public class ScoreMenu {
 	
 	public ScoreMenu(){}
 	
-	public static Scene Score(final Stage main, final Scene goBack){
+	public static Scene score(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
-		ArrayList<String> users = new ArrayList();
-		ArrayList<String> userScore = new ArrayList();
-		users.add("user1"); userScore.add("120");
+		final ArrayList<String> users = new ArrayList<String>();
+		final ArrayList<String> userScore = new ArrayList<String>();
+		String user = "user1";
+		users.add(user); userScore.add("120");
 		users.add("FireUser"); userScore.add("119");
-		users.add("user1"); userScore.add("115");
-		users.add("user1"); userScore.add("99");
-		users.add("user1"); userScore.add("98");
+		users.add(user); userScore.add("115");
+		users.add(user); userScore.add("99");
+		users.add(user); userScore.add("98");
 		users.add("FireUser"); userScore.add("78");
 		users.add("Guest"); userScore.add("72");
 		users.add("Falessi"); userScore.add("72");
@@ -37,8 +36,9 @@ public class ScoreMenu {
 		users.add("FakeUser"); userScore.add("66");
 		
 		final Button prsn = new Button("Personal");
+		prsn.setTextFill(Color.BLACK);
 		final Button top = new Button("Top");
-		float scoreNum = 10;
+		top.setTextFill(Color.BLACK);
 	
 		prsn.setMaxWidth(200);
 		prsn.setMinWidth(200);
@@ -51,7 +51,6 @@ public class ScoreMenu {
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(70));
 		
-		//Page Title
 		Text title = new Text("High Scores");
 		GridPane.setValignment(title, VPos.CENTER);
 		GridPane.setHalignment(title, HPos.CENTER);
@@ -59,17 +58,14 @@ public class ScoreMenu {
 	    title.maxWidth(100);
 	    title.minWidth(100);
 	    
-	    //High Scores
-	    Text subtitle = new Text("Top Scores");
+	    final Text subtitle = new Text("Top Scores");
 	    subtitle.setStyle("-fx-font: 20 arial;");
 	    
-	    //top scores
-	    Text scores[] = new Text[10]; 
+	    final Text[] scores = new Text[10]; 
 	    for (int i = 0; i < 10; i++) {
 	    	scores[i] = new Text(" ");
 	    }
 		
-	    //Back Button
 		Button back = new Button("Back");
 		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
@@ -78,8 +74,6 @@ public class ScoreMenu {
 			}
 		});
 		
-
-		//Toggle Scores Button
 		top.setStyle(StartMenu.buttonColor);
 		top.setStyle("-fx-font-weight: bold;");
 		top.setOnAction(new EventHandler<ActionEvent>() {
@@ -87,7 +81,6 @@ public class ScoreMenu {
 				top.setStyle("-fx-background-color: transparent;");
 				prsn.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Top Scores");
-				//set top
 				for (int i = 0; i < 10; i++) {
 					scores[i].setText(i+1 + ".\t" + users.get(i)+ "\t...................................................... " + userScore.get(i) + " wpm");
 					scores[i].setStyle("-fx-font: 15 arial;");
@@ -98,7 +91,6 @@ public class ScoreMenu {
 			}
 		});
 		
-		//Personal Scores Button
 		prsn.setStyle("-fx-font-weight: bold;");
 		prsn.setStyle(StartMenu.buttonColor);
 		prsn.setOnAction(new EventHandler<ActionEvent>() {
@@ -106,7 +98,6 @@ public class ScoreMenu {
 				prsn.setStyle("-fx-background-color: transparent");
 				top.setStyle(StartMenu.buttonColor);
 				subtitle.setText("Your Scores");
-				//personal scores
 				for (int i = 0; i < 10; i++) {
 					if (i < 3) 
 						scores[i].setText(i+1 + ".\t" + "CoolUser"+ "\t...................................................... " + (55-i) + "wpm");
@@ -128,7 +119,7 @@ public class ScoreMenu {
 		}
 		top.fire();
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
@@ -17,7 +16,7 @@ public class PausePage {
 
 	private PausePage(){}
 	
-	public static Scene Pause(final Stage stage, final Scene goBack) {
+	public static Scene pause(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -43,7 +42,7 @@ public class PausePage {
 		Button goHome = new Button("Go Home");
 		goHome.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.scene);
+				stage.setScene(StartMenu.backToMain(stage));
 			}
 		});
 		grid.add(goHome, 5, 18);
@@ -51,12 +50,12 @@ public class PausePage {
 		Button settings = new Button("Settings");
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(SettingsPage.Settings(stage, goBack));
+				stage.setScene(SettingsPage.settings(stage, goBack));
 			}
 		});
 		grid.add(settings, 5, 21);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

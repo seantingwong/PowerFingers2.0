@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.geometry.HPos;
@@ -18,7 +17,7 @@ public class LoginPage {
 	
 	private LoginPage(){}
 	
-	public static Scene Login(final Stage stage, final Scene goBack) {
+	public static Scene login(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
@@ -61,13 +60,13 @@ public class LoginPage {
 		login.setMaxWidth(100);
 		login.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(LoginSuccessfulPage.LoginSuccessful(stage));
+				stage.setScene(LoginSuccessfulPage.loginSuccessful(stage));
 			}
 		});	
 
 		grid.add(login, 3, 17);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

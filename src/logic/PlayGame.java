@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -22,7 +21,7 @@ public class PlayGame {
 	
 	private PlayGame(){}
 	
-	public static Scene Play(final Stage main, final Scene goBack){
+	public static Scene play(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		Scene scene;
 		
@@ -53,13 +52,13 @@ public class PlayGame {
 		guest.setStyle(StartMenu.buttonColor);
 		guest.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(PlayingGame.Game(main, goBack));
+				main.setScene(PlayingGame.game(main, goBack));
 			}
 		});
 		
-		newAcc = CreateAccount.Account(main, goBack);
+		newAcc = CreateAccount.account(main, goBack);
 		
-		log = LoginPage.Login(main, goBack);
+		log = LoginPage.login(main, goBack);
 		
 		grid.add(back, 0, 0);
 		grid.add(title, 4, 0);
@@ -75,17 +74,17 @@ public class PlayGame {
 		GridPane.setHalignment(account, HPos.CENTER);
 		GridPane.setHalignment(guest, HPos.CENTER);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(LoginPage.Login(main, goBack));
+				main.setScene(LoginPage.login(main, goBack));
 			}
 		});
 		
 		account.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				main.setScene(CreateAccount.Account(main, goBack));			
+				main.setScene(CreateAccount.account(main, goBack));			
 			}
 		});
 		
