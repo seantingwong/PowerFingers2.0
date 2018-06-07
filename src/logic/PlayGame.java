@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -75,7 +74,7 @@ public class PlayGame {
 		GridPane.setHalignment(account, HPos.CENTER);
 		GridPane.setHalignment(guest, HPos.CENTER);
 		
-		scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		
 		logIn.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {

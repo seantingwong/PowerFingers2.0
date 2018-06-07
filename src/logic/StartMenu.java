@@ -21,24 +21,27 @@ public class StartMenu extends Application{
 	static int width = 500;
 	static String buttonColor = "-fx-background-color: LightGrey;";
 	static Color backgroundColor = Color.LIGHTSKYBLUE;
+	static Color backgroundMain = Color.WHITE;
 	
-	Text title;
-	Button play;
-	Button scores;
-	Button test;
-	Button settings;
-	Button help;
-	Scene helpMenu;
+
 	static Scene settingsPage;
 	static Scene playGame;
-	public static Scene scene;
 	public static int colorSelected = 0;
 
 	@Override
 	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
+
+		Scene scene = backToMain(stage);
+
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public static Scene backToMain(Stage stage)
+	{
 		GridPane grid = new GridPane();
-		scene = new Scene(grid, height, width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, height, width, backgroundMain);
 		
         grid.setStyle("-fx-background-color: transparent;");
 		grid.setAlignment(Pos.CENTER);
@@ -47,10 +50,11 @@ public class StartMenu extends Application{
 		grid.setPadding(new Insets(25, 25, 25, 25));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
-		title = new Text("Power Fingers");
+
+		Text title = new Text("Power Fingers");
 	    title.setStyle("-fx-font: 36 arial;");
 	    
-		play = new Button("Play");
+		Button play = new Button("Play");
 		play.setStyle(buttonColor);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
@@ -58,7 +62,7 @@ public class StartMenu extends Application{
 			}
 		});
 		
-		scores = new Button("Scores");
+		Button scores = new Button("Scores");
 		scores.setStyle(buttonColor);
 		scores.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
@@ -66,7 +70,7 @@ public class StartMenu extends Application{
 			}
 		});
 		
-		settings = new Button("Settings");
+		Button settings = new Button("Settings");
 		settings.setStyle(buttonColor);
 		settings.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
@@ -74,7 +78,7 @@ public class StartMenu extends Application{
 			}
 		});
 		
-		help = new Button("Help");
+		Button help = new Button("Help");
 		help.setStyle(buttonColor);
 		help.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
@@ -99,9 +103,8 @@ public class StartMenu extends Application{
 		grid.add(scores, 0, 2);
 		grid.add(settings, 0, 3);
 		grid.add(help, 0, 4);
-
-		stage.setScene(scene);
-		stage.show();
+		
+		return(scene);
 	}
 	
 	public static void main(String[] args)

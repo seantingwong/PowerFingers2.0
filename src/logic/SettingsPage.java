@@ -48,7 +48,7 @@ public class SettingsPage {
 		
 		final ToggleGroup group = new ToggleGroup();
 		RadioButton blueButton = new RadioButton("Blue");
-		blueButton.setTextFill(Color.WHITE);
+		blueButton.setTextFill(Color.BLACK);
 		blueButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				StartMenu.backgroundColor = Color.LIGHTSKYBLUE;
@@ -62,7 +62,7 @@ public class SettingsPage {
 		}
 		
 		RadioButton redButton = new RadioButton("Red");
-		redButton.setTextFill(Color.WHITE);
+		redButton.setTextFill(Color.BLACK);
 		redButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				StartMenu.backgroundColor = Color.INDIANRED;
@@ -76,7 +76,7 @@ public class SettingsPage {
 		}
 		
 		RadioButton greenButton = new RadioButton("Green");
-		greenButton.setTextFill(Color.WHITE);
+		greenButton.setTextFill(Color.BLACK);
 		greenButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				StartMenu.backgroundColor = Color.DARKSEAGREEN;
@@ -105,7 +105,7 @@ public class SettingsPage {
 		GridPane.setHalignment(redButton, HPos.CENTER);
 		GridPane.setHalignment(greenButton, HPos.CENTER);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 	

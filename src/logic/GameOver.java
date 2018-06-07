@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -16,6 +15,8 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 public class GameOver {
+	
+	private GameOver(){}
 	
 	public static Scene over(final Stage stage) {
 		
@@ -37,7 +38,7 @@ public class GameOver {
 		Button goHome = new Button("Go Home");
 		goHome.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.scene);
+				stage.setScene(StartMenu.backToMain(stage));
 			}
 		});
 		
@@ -47,7 +48,7 @@ public class GameOver {
 		grid.add(title, 0, 0);
 		grid.add(goHome, 0, 18);
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 }

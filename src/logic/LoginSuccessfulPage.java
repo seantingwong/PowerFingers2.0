@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -35,7 +34,7 @@ public class LoginSuccessfulPage {
 		back.setStyle(StartMenu.buttonColor);
 		back.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				stage.setScene(StartMenu.scene);
+				stage.setScene(StartMenu.backToMain(stage));
 			}
 		});
 		
@@ -62,7 +61,7 @@ public class LoginSuccessfulPage {
 		GridPane.setHalignment(play, HPos.CENTER);
 		GridPane.setHalignment(logout, HPos.CENTER);
 		
-		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		final Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				stage.setScene(PlayingGame.game(stage, scene));

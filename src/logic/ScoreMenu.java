@@ -23,11 +23,12 @@ public class ScoreMenu {
 		GridPane grid = new GridPane();
 		final ArrayList<String> users = new ArrayList<String>();
 		final ArrayList<String> userScore = new ArrayList<String>();
-		users.add("user1"); userScore.add("120");
+		String user = "user1";
+		users.add(user); userScore.add("120");
 		users.add("FireUser"); userScore.add("119");
-		users.add("user1"); userScore.add("115");
-		users.add("user1"); userScore.add("99");
-		users.add("user1"); userScore.add("98");
+		users.add(user); userScore.add("115");
+		users.add(user); userScore.add("99");
+		users.add(user); userScore.add("98");
 		users.add("FireUser"); userScore.add("78");
 		users.add("Guest"); userScore.add("72");
 		users.add("Falessi"); userScore.add("72");
@@ -35,7 +36,9 @@ public class ScoreMenu {
 		users.add("FakeUser"); userScore.add("66");
 		
 		final Button prsn = new Button("Personal");
+		prsn.setTextFill(Color.BLACK);
 		final Button top = new Button("Top");
+		top.setTextFill(Color.BLACK);
 	
 		prsn.setMaxWidth(200);
 		prsn.setMinWidth(200);
@@ -58,7 +61,7 @@ public class ScoreMenu {
 	    final Text subtitle = new Text("Top Scores");
 	    subtitle.setStyle("-fx-font: 20 arial;");
 	    
-	    final Text scores[] = new Text[10]; 
+	    final Text[] scores = new Text[10]; 
 	    for (int i = 0; i < 10; i++) {
 	    	scores[i] = new Text(" ");
 	    }
@@ -113,7 +116,7 @@ public class ScoreMenu {
 		}
 		top.fire();
 		
-		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, Color.DIMGRAY);
+		Scene scene = new Scene(grid, StartMenu.height, StartMenu.width, StartMenu.backgroundMain);
 		return(scene);
 	}
 }
