@@ -8,6 +8,6 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ IntegrationTesting.class })
-public class Login {
+public class Integration {
 
 }

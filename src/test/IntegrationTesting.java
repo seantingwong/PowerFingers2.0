@@ -101,7 +101,7 @@ public class IntegrationTesting {
       assertEquals(true, isGoodStyle);
    }
    @Test
-   public void testGetStylePausePage() {
+   public void testGetStylePage() {
       String style = StartMenu.BUTTONCOLOR;
       boolean isGoodStyle = verifyStyle("-fx-background-color: LightGrey;", style);
       assertEquals(true, isGoodStyle);
