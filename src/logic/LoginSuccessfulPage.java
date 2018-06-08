@@ -15,9 +15,9 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class LoginSuccessfulPage {
 	
-	public static String final STYLE = "-fx-background-color: transparent;";
+	public static final String STYLE = "-fx-background-color: transparent;";
 	
-	private LoginSuccessfulPage(){}
+	private LoginSuccessfulPage(){};
 
 	public static String getStyle() {
 		return STYLE;
