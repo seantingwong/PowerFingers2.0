@@ -20,9 +20,63 @@ public class SettingsPage {
 	public static final int CONSTRAINT = 150;
 	public static final String STYLE = "-fx-font: 24 arial;";
 	
-	private SettingsPage(){}
+	public SettingsPage(){}
+	
+	//private RadioButton blueButton = new RadioButton("Blue");
+	
+	public static Color setColorBlue() {
+		StartMenu.backgroundColor = Color.LIGHTSKYBLUE;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorRed() {
+		StartMenu.backgroundColor = Color.INDIANRED;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorGreen() {
+		StartMenu.backgroundColor = Color.DARKSEAGREEN;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorYellow() {
+		StartMenu.backgroundColor = Color.YELLOW;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorOrange() {
+		StartMenu.backgroundColor = Color.ORANGE;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorTan() {
+		StartMenu.backgroundColor = Color.TAN;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorPurple() {
+		StartMenu.backgroundColor = Color.MEDIUMPURPLE;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	public static Color setColorGrey() {
+		StartMenu.backgroundColor = Color.GREY;
+		StartMenu.colorSelected = 0;
+		return StartMenu.backgroundColor;
+	}
+	
+	
+
 	
 	public static Scene settings(final Stage main, final Scene goBack){
+		
 		GridPane grid = new GridPane();
 		
         grid.setStyle("-fx-background-color: transparent;");
@@ -46,14 +100,12 @@ public class SettingsPage {
 				main.setScene(goBack);
 			}
 		});
-		
-		final ToggleGroup group = new ToggleGroup();
 		RadioButton blueButton = new RadioButton("Blue");
+		final ToggleGroup group = new ToggleGroup();
 		blueButton.setTextFill(Color.BLACK);
 		blueButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				StartMenu.backgroundColor = Color.LIGHTSKYBLUE;
-				StartMenu.colorSelected = 0;
+				setColorBlue();
 			}
 		});
 		blueButton.setToggleGroup(group);
