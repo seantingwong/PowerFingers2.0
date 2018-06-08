@@ -28,8 +28,6 @@ public class StartMenu extends Application{
 	@Override
 	public void start(final Stage stage) throws Exception {
 		stage.setTitle("Power Fingers");
-		
-		int unused;
 
 		Scene scene = backToMain(stage);
 
