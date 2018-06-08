@@ -18,15 +18,20 @@ public class GameOver {
 	
 	public static final int COL = 0;
 	public static final int INSET = 25;
+	public static final String STYLE = "-fx-background-color: transparent;";
 	
 	private GameOver(){}
+	
+	public static String getStyle() {
+		return STYLE;
+	}
 	
 	public static Scene over(final Stage stage) {
 		
 		GridPane grid = new GridPane();
 		
 		grid.setAlignment(Pos.CENTER);
-		grid.setStyle("-fx-background-color: transparent;");
+		grid.setStyle(STYLE);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(INSET, INSET, INSET, INSET));

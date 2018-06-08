@@ -15,12 +15,18 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class HelpMenu {
 	
+	public static final String STYLE = "-fx-background-color: transparent;";
+	
 	private HelpMenu(){}
+
+	public static String getStyle() {
+		return STYLE;
+	}
 	
 	public static Scene help(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		
-        grid.setStyle("-fx-background-color: transparent;");
+        grid.setStyle(STYLE);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));
