@@ -29,7 +29,7 @@ public class GameOver {
 		grid.setStyle("-fx-background-color: transparent;");
 		grid.setHgap(5);
 		grid.setVgap(5);
-		grid.setPadding(new Insets(25, 25, 25, 25));
+		grid.setPadding(new Insets(INSET, INSET, INSET, INSET));
 		grid.getColumnConstraints().add(new ColumnConstraints(150));
 		
 		Text title = new Text("Game Over");
