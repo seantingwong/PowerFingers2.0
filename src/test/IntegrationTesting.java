@@ -80,22 +80,20 @@ public class IntegrationTesting {
 	}
 	
 	// Sam's Tests
-   
    @Test
-   public void testGetStyleLoginSuccessfulPage() {
+   public void testGetStyle() {
       int style = SettingsPage.CONSTRAINT;
       boolean isGoodStyle = verifyValue(150, style);
       assertEquals(true, isGoodStyle);
    }
    @Test
-   public void testGetStylePausePage() {
+   public void testGetStylePause() {
       String style = SettingsPage.STYLE;
       boolean isGoodStyle = verifyStyle("-fx-font: 24 arial;", style);
       assertEquals(true, isGoodStyle);
    }
 	
 	// Jessie's Tests
-   
    @Test
    public void testStartValue() {
       int style = StartMenu.WIDTH;
