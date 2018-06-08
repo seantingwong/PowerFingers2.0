@@ -17,7 +17,7 @@ public class LoginSuccessfulPage {
 	
 	public static final String STYLE = "-fx-background-color: transparent;";
 	
-	private LoginSuccessfulPage(){};
+	private LoginSuccessfulPage(){}
 
 	public static String getStyle() {
 		return STYLE;
