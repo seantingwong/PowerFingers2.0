@@ -16,6 +16,8 @@ public class CreateAccount {
 	
 	public static final String STYLE = "-fx-background-color: transparent;";
 	
+   String test;
+   
 	private CreateAccount(){}
 	
 	public static String getStyle() {
