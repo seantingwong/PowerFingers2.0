@@ -1,7 +1,6 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 import logic.CreateAccount;
@@ -18,6 +17,10 @@ public class IntegrationTesting {
 	public boolean verifyStyle(String expected, String style) {
 		return style == expected;
 	}
+   
+   public boolean verifyValue(int expected, int value) {
+      return value == expected;
+   }
 	
 	// Brady's Tests
 	@Test
@@ -77,9 +80,33 @@ public class IntegrationTesting {
 	}
 	
 	// Sam's Tests
-	
+   
+   @Test
+   public void testGetStyleLoginSuccessfulPage() {
+      int style = SettingsPage.CONSTRAINT;
+      boolean isGoodStyle = verifyValue(150, style);
+      assertEquals(true, isGoodStyle);
+   }
+   @Test
+   public void testGetStylePausePage() {
+      String style = SettingsPage.STYLE;
+      boolean isGoodStyle = verifyStyle("-fx-font: 24 arial;", style);
+      assertEquals(true, isGoodStyle);
+   }
 	
 	// Jessie's Tests
-	
+   
+   @Test
+   public void testStartValue() {
+      int style = StartMenu.WIDTH;
+      boolean isGoodStyle = verifyValue(500, style);
+      assertEquals(true, isGoodStyle);
+   }
+   @Test
+   public void testGetStylePausePage() {
+      String style = StartMenu.BUTTONCOLOR;
+      boolean isGoodStyle = verifyStyle("-fx-background-color: LightGrey;", style);
+      assertEquals(true, isGoodStyle);
+   }
 	
 }
