@@ -30,8 +30,6 @@ public class StartMenu extends Application{
 		stage.setTitle("Power Fingers");
 
 		Scene scene = backToMain(stage);
-
-      int test;
       
 		stage.setScene(scene);
 		stage.show();
