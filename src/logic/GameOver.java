@@ -18,7 +18,7 @@ public class GameOver {
 	
 	public static final int COL = 0;
 	public static final int INSET = 25;
-	public static String STYLE = "-fx-background-color: transparent;";
+	public static final String STYLE = "-fx-background-color: transparent;";
 	
 	private GameOver(){}
 	

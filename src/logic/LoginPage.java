@@ -17,7 +17,7 @@ public class LoginPage {
 	public static final String USER = "Username";
 	public static final String PASS = "Password";
 	
-	public static String STYLE = "-fx-background-color: transparent;";
+	public static final String STYLE = "-fx-background-color: transparent;";
 	
 	private LoginPage(){}
 	

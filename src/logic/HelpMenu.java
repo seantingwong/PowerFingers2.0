@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class HelpMenu {
 	
-	public static String STYLE = "-fx-background-color: transparent;";
+	public static final String STYLE = "-fx-background-color: transparent;";
 	
 	private HelpMenu(){}
 
