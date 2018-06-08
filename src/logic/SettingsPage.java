@@ -22,6 +22,10 @@ public class SettingsPage {
 	
 	private SettingsPage(){}
 	
+	public static String getStyle() {
+		return STYLE;
+	}
+	
 	public static Scene settings(final Stage main, final Scene goBack){
 		GridPane grid = new GridPane();
 		

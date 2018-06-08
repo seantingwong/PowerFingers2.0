@@ -15,12 +15,18 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class LoginSuccessfulPage {
 	
+	public static String STYLE = "-fx-background-color: transparent;";
+	
 	private LoginSuccessfulPage(){}
 
+	public static String getStyle() {
+		return STYLE;
+	}
+	
 	public static Scene loginSuccessful(final Stage stage) {
 		GridPane grid = new GridPane();
 		
-        grid.setStyle("-fx-background-color: transparent;");
+        grid.setStyle(STYLE);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));

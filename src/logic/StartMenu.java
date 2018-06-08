@@ -36,6 +36,10 @@ public class StartMenu extends Application{
 		stage.show();
 	}
 	
+	public static String getStyle() {
+		return BUTTONCOLOR;
+	}
+		
 	public static Scene backToMain(final Stage stage)
 	{
 		GridPane grid = new GridPane();

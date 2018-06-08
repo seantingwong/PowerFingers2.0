@@ -15,13 +15,19 @@ import javafx.stage.Stage;
 @SuppressWarnings("restriction")
 public class CreateAccount {
 	
+	public static String STYLE = "-fx-background-color: transparent;";
+	
 	private CreateAccount(){}
+	
+	public static String getStyle() {
+		return STYLE;
+	}
 	
 	public static Scene account(final Stage main, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
-		grid.setStyle("-fx-background-color: transparent;");
+		grid.setStyle(STYLE);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));

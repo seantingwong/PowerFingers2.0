@@ -17,13 +17,19 @@ public class LoginPage {
 	public static final String USER = "Username";
 	public static final String PASS = "Password";
 	
+	public static String STYLE = "-fx-background-color: transparent;";
+	
 	private LoginPage(){}
+	
+	public static String getStyle() {
+		return STYLE;
+	}
 	
 	public static Scene login(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
 		
-		grid.setStyle("-fx-background-color: transparent;");
+		grid.setStyle(STYLE);
 		grid.setHgap(5);
 		grid.setVgap(5);
 		grid.setPadding(new Insets(25, 25, 25, 25));

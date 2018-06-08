@@ -17,6 +17,11 @@ public class PausePage {
 
 	private PausePage(){}
 	
+	public static String getStyle() {
+		return BACKCOL;
+	}
+	
+	
 	public static Scene pause(final Stage stage, final Scene goBack) {
 		
 		GridPane grid = new GridPane();
