@@ -31,6 +31,8 @@ public class StartMenu extends Application{
 
 		Scene scene = backToMain(stage);
 
+      int test;
+      
 		stage.setScene(scene);
 		stage.show();
 	}
