@@ -13,7 +13,6 @@ import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
-@SuppressWarnings("restriction")
 public class PlayingGame {
 	
 	private PlayingGame(){}

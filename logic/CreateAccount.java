@@ -12,7 +12,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.HPos;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
 public class CreateAccount {
 	
 	public static final String STYLE = "-fx-background-color: transparent;";

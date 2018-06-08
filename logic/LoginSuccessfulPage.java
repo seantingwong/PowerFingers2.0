@@ -12,7 +12,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
 public class LoginSuccessfulPage {
 	
 	public static final String STYLE = "-fx-background-color: transparent;";

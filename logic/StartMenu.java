@@ -14,7 +14,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
 public class StartMenu extends Application{
 	// macros
 	public static final int HEIGHT = 600;

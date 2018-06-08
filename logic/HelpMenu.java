@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
 public class HelpMenu {
 	
 	public static final String STYLE = "-fx-background-color: transparent;";

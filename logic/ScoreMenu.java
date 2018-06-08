@@ -16,7 +16,6 @@ import javafx.geometry.Insets;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
-@SuppressWarnings("restriction")
 public class ScoreMenu {
 	
 	public static final  int WIDTH = 200;

@@ -15,14 +15,11 @@ import javafx.geometry.VPos;
 import javafx.stage.Stage;
 
 
-@SuppressWarnings("restriction")
 public class SettingsPage {
 	public static final int CONSTRAINT = 150;
 	public static final String STYLE = "-fx-font: 24 arial;";
 	
-	public SettingsPage(){}
-	
-	//private RadioButton blueButton = new RadioButton("Blue");
+	private SettingsPage(){}
 	
 	public static Color setColorBlue() {
 		StartMenu.backgroundColor = Color.LIGHTSKYBLUE;
@@ -71,9 +68,6 @@ public class SettingsPage {
 		StartMenu.colorSelected = 0;
 		return StartMenu.backgroundColor;
 	}
-	
-	
-
 	
 	public static String getStyle() {
 		return STYLE;

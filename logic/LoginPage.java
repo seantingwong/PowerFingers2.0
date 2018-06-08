@@ -12,7 +12,6 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
 public class LoginPage {
 	public static final String USER = "Username";
 	public static final String PASS = "Password";

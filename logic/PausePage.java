@@ -11,7 +11,6 @@ import javafx.geometry.Insets;
 import javafx.stage.Stage;
 
 
-@SuppressWarnings("restriction")
 public class PausePage {
 	public static final String BACKCOL = "-fx-background-color: transparent;";
 

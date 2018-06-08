@@ -14,7 +14,6 @@ import javafx.geometry.Insets;
 import javafx.stage.Stage;
 
 
-@SuppressWarnings("restriction")
 public class PlayGame {
 	
 	static Scene log;

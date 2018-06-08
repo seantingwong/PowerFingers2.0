@@ -6,7 +6,6 @@ import org.junit.Test;
 import javafx.scene.paint.Color;
 import logic.ScoreMenu;
 
-@SuppressWarnings("restriction")
 public class ScoreMenuTest {
 	
 	@Test

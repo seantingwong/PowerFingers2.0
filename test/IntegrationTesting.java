@@ -48,7 +48,6 @@ public class IntegrationTesting {
 		assertEquals(true, isGoodStyle);
 	}
 	
-	
 	// Megan's Tests
 	@Test
 	public void testGetStyleHelpMenu() {

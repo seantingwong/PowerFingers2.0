@@ -13,7 +13,6 @@ import javafx.geometry.Pos;
 import javafx.stage.Stage;
 
 
-@SuppressWarnings("restriction")
 public class GameOver {
 	
 	public static final int COL = 0;
